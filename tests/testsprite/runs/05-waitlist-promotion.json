@@ -1,0 +1,35 @@
+### 2026-07-05T23:09:24Z create+run: waitlist promotion
+idempotency-key: cli-create-a5cbd790-be77-4d1d-8f25-3d9e4e3a0810
+{
+  "testId": "ea121ed6-a51d-4529-a942-6230bb740649",
+  "type": "backend",
+  "codeVersion": "v1",
+  "createdAt": "2026-07-05T23:09:23.439Z",
+  "dashboardUrl": "https://www.testsprite.com/dashboard/tests/bdd79882-cb60-4618-87fb-f688c27cee41/test/ea121ed6-a51d-4529-a942-6230bb740649",
+  "run": {
+    "runId": "b2c322f3-c51a-4ca6-86a8-4c8bd6334753",
+    "testId": "ea121ed6-a51d-4529-a942-6230bb740649",
+    "projectId": "bdd79882-cb60-4618-87fb-f688c27cee41",
+    "userId": "e428b4a8-60f1-701f-4eb7-443f4980caf5",
+    "status": "passed",
+    "source": "cli",
+    "createdAt": "2026-07-05T23:09:23.577Z",
+    "startedAt": null,
+    "finishedAt": "2026-07-05T23:09:25.009Z",
+    "codeVersion": null,
+    "targetUrl": null,
+    "createdFrom": null,
+    "failedStepIndex": null,
+    "failureKind": null,
+    "videoUrl": null,
+    "error": "",
+    "stepSummary": {
+      "total": 0,
+      "completed": 0,
+      "passedCount": 0,
+      "failedCount": 0
+    },
+    "dashboardUrl": "https://www.testsprite.com/dashboard/tests/bdd79882-cb60-4618-87fb-f688c27cee41/test/ea121ed6-a51d-4529-a942-6230bb740649"
+  }
+}
+requestId: cli_b6a42a71-1879-4328-8afb-679054d39414

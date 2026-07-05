@@ -1,0 +1,35 @@
+### 2026-07-05T23:08:31Z create+run: authz+validation
+idempotency-key: cli-create-032a6b10-dd29-45ed-920e-73100b8a72ff
+{
+  "testId": "82fe4dfd-20b9-4238-8533-574c47197659",
+  "type": "backend",
+  "codeVersion": "v1",
+  "createdAt": "2026-07-05T23:08:32.663Z",
+  "dashboardUrl": "https://www.testsprite.com/dashboard/tests/bdd79882-cb60-4618-87fb-f688c27cee41/test/82fe4dfd-20b9-4238-8533-574c47197659",
+  "run": {
+    "runId": "adfaed95-9444-41cb-903f-39a83dbeb224",
+    "testId": "82fe4dfd-20b9-4238-8533-574c47197659",
+    "projectId": "bdd79882-cb60-4618-87fb-f688c27cee41",
+    "userId": "e428b4a8-60f1-701f-4eb7-443f4980caf5",
+    "status": "passed",
+    "source": "cli",
+    "createdAt": "2026-07-05T23:08:32.882Z",
+    "startedAt": null,
+    "finishedAt": "2026-07-05T23:08:34.354Z",
+    "codeVersion": null,
+    "targetUrl": null,
+    "createdFrom": null,
+    "failedStepIndex": null,
+    "failureKind": null,
+    "videoUrl": null,
+    "error": "",
+    "stepSummary": {
+      "total": 0,
+      "completed": 0,
+      "passedCount": 0,
+      "failedCount": 0
+    },
+    "dashboardUrl": "https://www.testsprite.com/dashboard/tests/bdd79882-cb60-4618-87fb-f688c27cee41/test/82fe4dfd-20b9-4238-8533-574c47197659"
+  }
+}
+requestId: cli_95a06b69-128c-4c3b-b695-074246ed110b

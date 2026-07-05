@@ -1,0 +1,27 @@
+idempotency-key: cli-run-157b5499-6035-4aad-ab9e-cbee7504497a
+{
+  "runId": "c13fec72-baad-494f-915f-8b6330e9915b",
+  "testId": "93bb4fb9-efe8-4bc2-bc80-a677338d3df7",
+  "projectId": "bdd79882-cb60-4618-87fb-f688c27cee41",
+  "userId": "e428b4a8-60f1-701f-4eb7-443f4980caf5",
+  "status": "passed",
+  "source": "cli",
+  "createdAt": "2026-07-05T23:05:24.328Z",
+  "startedAt": null,
+  "finishedAt": "2026-07-05T23:05:24.575Z",
+  "codeVersion": null,
+  "targetUrl": null,
+  "createdFrom": null,
+  "failedStepIndex": null,
+  "failureKind": null,
+  "videoUrl": null,
+  "error": "",
+  "stepSummary": {
+    "total": 0,
+    "completed": 0,
+    "passedCount": 0,
+    "failedCount": 0
+  },
+  "dashboardUrl": "https://www.testsprite.com/dashboard/tests/bdd79882-cb60-4618-87fb-f688c27cee41/test/93bb4fb9-efe8-4bc2-bc80-a677338d3df7"
+}
+requestId: cli_6f7eec1c-76eb-4592-912c-d0d574fa836d

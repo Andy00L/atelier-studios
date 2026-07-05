@@ -1,0 +1,35 @@
+### 2026-07-05T23:07:31Z create+run: booking invariant
+idempotency-key: cli-create-4f0db8b5-7ed0-45ca-b104-ea037673870c
+{
+  "testId": "0606dc51-e752-4b5f-a2ff-c7448c4dfb60",
+  "type": "backend",
+  "codeVersion": "v1",
+  "createdAt": "2026-07-05T23:07:31.763Z",
+  "dashboardUrl": "https://www.testsprite.com/dashboard/tests/bdd79882-cb60-4618-87fb-f688c27cee41/test/0606dc51-e752-4b5f-a2ff-c7448c4dfb60",
+  "run": {
+    "runId": "9142f139-a06a-4819-b6e5-40448c6805a2",
+    "testId": "0606dc51-e752-4b5f-a2ff-c7448c4dfb60",
+    "projectId": "bdd79882-cb60-4618-87fb-f688c27cee41",
+    "userId": "e428b4a8-60f1-701f-4eb7-443f4980caf5",
+    "status": "passed",
+    "source": "cli",
+    "createdAt": "2026-07-05T23:07:31.913Z",
+    "startedAt": null,
+    "finishedAt": "2026-07-05T23:07:33.329Z",
+    "codeVersion": null,
+    "targetUrl": null,
+    "createdFrom": null,
+    "failedStepIndex": null,
+    "failureKind": null,
+    "videoUrl": null,
+    "error": "",
+    "stepSummary": {
+      "total": 0,
+      "completed": 0,
+      "passedCount": 0,
+      "failedCount": 0
+    },
+    "dashboardUrl": "https://www.testsprite.com/dashboard/tests/bdd79882-cb60-4618-87fb-f688c27cee41/test/0606dc51-e752-4b5f-a2ff-c7448c4dfb60"
+  }
+}
+requestId: cli_162384ed-1a66-40eb-8d7e-c131282e7706

@@ -82,7 +82,9 @@ Rules: one action per step, stable `data-testid` selectors, 1-2 assertions at th
 
 ## Backend test shape (Python)
 
-A standalone script/pytest file that makes real HTTP calls to the deployed API and asserts. Keep each file self-contained: base URL constant at the top, helper for login to get a token, requests calls, plain asserts with messages. Store every file in `tests/testsprite/backend/` and commit it (judge-facing evidence).
+A standalone script that makes real HTTP calls to the deployed API and asserts. Keep each file self-contained: base URL constant at the top, helper for login to get a token, `requests` calls, plain asserts with messages. Store every file in `tests/testsprite/backend/` and commit it (judge-facing evidence).
+
+CRITICAL (verified July 5, cost us a false pass): the backend runner executes the file TOP TO BOTTOM and does NOT auto-collect pytest `test_*` functions. A test that is only defined but never CALLED passes vacuously without running any assertion. Every backend test file MUST invoke its `test_*` function at the end of the file. Sandbox has only stdlib + requests + pytest + numpy + scipy; never import project modules or hardcode secrets (do not put INTERNAL_TASK_KEY in a committed test).
 
 ## The loop, mechanically (one iteration)
 
