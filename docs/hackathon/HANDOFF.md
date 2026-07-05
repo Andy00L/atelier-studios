@@ -27,9 +27,31 @@ Last updated: July 5, 2026 (planning session, before Phase 0). RULE FOR EVERY SE
 - Phase 0 IN PROGRESS (July 5): Next.js 16.2.10 + React 19 + Tailwind v4 scaffolded at the repo root with Bun 1.3.14 (installed in WSL at `~/.bun/bin`; export PATH in non-interactive shells). `/api/health` route handler added (force-dynamic), metadata title set to Atelier, `.env.example` created, `.gitignore` fixed to keep `.env.example` and ignore `/.scratch/`. Production build passes (`bun run build` via `wsl -e bash -lc`).
 - The scaffold generated `AGENTS.md` (Next 16 guidance: read `node_modules/next/dist/docs/` before writing Next code); root CLAUDE.md now imports it. The scaffold's own CLAUDE.md was deleted (it only contained the import).
 - WARNING: as of the July 5 session, `~/testsprite` had NO `.git` directory: the human had not yet run the init block. The README.md at root is the create-next-app boilerplate; the real README comes at Phase 5 via readme-craft. The human should NOT run the `echo "# atelier-studios" >> README.md` line from GitHub's snippet (a README already exists).
-- July 5, later in the session: human pushed the scaffold commit to GitHub (verified via the public API, commit "chore: scaffold Next.js 16 app ..."), imported the repo in Vercel (https://atelier-studios-opal.vercel.app), provided the TestSprite API key (CLI configured, account andy.luemba@protonmail.com), and switched the database decision to Convex (deployment patient-ox-888). TestSprite CLI 0.2.0 installed globally in WSL via `bun install -g @testsprite/testsprite-cli`.
-- Remaining Phase 0 items: Vercel URL currently serves 404 (deployment predates the scaffold push or build failed; verify in the Vercel dashboard if it persists), then `testsprite project create` + first test + first LOOP.md entry via the testsprite-onboard skill.
-- Phase 1 note: still need CONVEX_DEPLOY_KEY from the Convex dashboard (goes in .env.local only) before Convex functions can be pushed.
+- July 5, later: human pushed the scaffold commit, imported the repo in Vercel (https://atelier-studios-opal.vercel.app), provided the TestSprite API key (CLI configured, account andy.luemba@protonmail.com), switched the database to Convex (deployment patient-ox-888). TestSprite CLI 0.2.0 installed globally in WSL.
+- July 5, BACKEND BUILT AND LOCALLY VERIFIED (blocked-session work per risk register item 2): the entire Convex backend and all 22 REST endpoints are written, typecheck clean, `bun run build` green, and pass a 19-assertion local smoke test (`.scratch/smoke.mjs`) against an anonymous local Convex deployment. Verified locally: golden booking path, the anti-overlap invariant (409 SLOT_CONFLICT), idempotent re-hold and double-confirm, past/open-hours validation, auth probes (401/403), waitlist join and promotion-on-cancel. Files: `convex/` (schema, lib/, users, sessions, studios, availability, holds, bookings, waitlist, blackouts, internal, seed) and `src/app/api/**` + `src/lib/` (config, passwords, http, api).
+- NOT YET DONE: nothing is checker-verified against the PUBLIC url yet (that is the real proof and needs the deploy unblocked). No UI. No TestSprite tests. No LOOP.md. No CI.
+- BLOCKERS (still on the human):
+  1. Vercel production URL serves 404. Fix: dashboard > Settings > set Framework Preset = Next.js, set Build Command = `npx convex deploy --cmd 'bun run build'`, add env vars `CONVEX_DEPLOY_KEY` (prod key from Convex dashboard patient-ox-888 > Settings > Deploy keys) and confirm `NEXT_PUBLIC_CONVEX_URL` is injected by that build command. Redeploy.
+  2. CONVEX_DEPLOY_KEY (prod) is required both for Vercel and for a manual `bunx convex deploy`. Until then the code is deployed only to the anonymous LOCAL deployment.
+  3. After deploy is green: seed production with `bunx convex run seed:seedDemo '{...hashes...}' --prod` (compute hashes with .scratch/hash.mjs; pick real passwords, put them and the seeded emails in .env.local and record where in this file).
+
+## Local dev recipe (offline, for any session before the public URL is up)
+
+Anonymous local Convex needs no account or key:
+
+```bash
+# start local Convex backend (keeps running; background it)
+wsl -e bash -lc "export PATH=\$HOME/.bun/bin:\$PATH && cd ~/testsprite && export CONVEX_AGENT_MODE=anonymous && bunx convex dev"
+# push + codegen + typecheck once, then exit:
+#   bunx convex dev --once --typecheck try   (same CONVEX_AGENT_MODE=anonymous env)
+# seed local:
+#   bunx convex run seed:seedDemo "$(cat .scratch/seedargs.json)"
+# run the app against local Convex, then the smoke test (all in ONE bash invocation
+# so the process tree stays alive; nohup does NOT survive a wsl -e bash exit):
+#   bun run start &  ... wait for /api/health 200 ... node .scratch/smoke.mjs
+```
+
+CRITICAL env note: `bunx convex dev` REWRITES `.env.local` to point `NEXT_PUBLIC_CONVEX_URL` at the LOCAL deployment (127.0.0.1:3210). That is correct for offline work and is gitignored. PRODUCTION uses the real patient-ox-888 URL, injected at Vercel build time by `convex deploy --cmd`; do not hardcode the local URL anywhere committed. Production deploy is selected by CONVEX_DEPLOY_KEY, never by the local `.env.local`.
 
 ## Blocking inputs still owed by the human (ask first thing)
 

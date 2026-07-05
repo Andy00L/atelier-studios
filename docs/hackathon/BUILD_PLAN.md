@@ -21,20 +21,29 @@ Companion files (read when the plan says so, not all at once):
 5. NON-NEGOTIABLES: the agent never runs any git command (print handoff blocks starting with `cd ~/testsprite`; the human runs them). LOOP.md lines are appended ONLY for runs that actually happened on the platform. Never commit secrets; keys live in `.env.local`, the CLI profile, or Vercel/GitHub settings. French in chat, English in every repo artifact. No em dash or en dash anywhere; grep before finishing (`.claude/SKILL_GENERAL.md` section 8 lists banned words).
 6. Definition of done for EVERY step: build green (`bun run build` via the wrapper), the step's gate checked, HANDOFF.md updated, files-affected report printed, git handoff printed.
 
-## 1. State snapshot (July 5, ~10:30 UTC)
+## 1. State snapshot (updated July 5, ~22:10 UTC)
 
-DONE: planning docs; Next.js 16.2.10 + Tailwind v4 scaffold at repo root; `/api/health` with `commit` field (build green, NOT yet pushed); TestSprite CLI 0.2.0 configured (account andy.luemba@protonmail.com); convex 1.42.1 installed (esbuild postinstall trusted); scaffold commit pushed to GitHub.
+DONE: planning docs; Next.js 16.2.10 + Tailwind v4 scaffold; TestSprite CLI 0.2.0 configured; convex 1.42.1 installed; scaffold pushed to GitHub.
 
-BROKEN: the Vercel production URL serves 404 (`x-vercel-error: NOT_FOUND`): the live deployment predates the scaffold push. Phase A fixes this.
+DONE (blocked-session, code written + LOCALLY verified, NOT checker-verified): the ENTIRE Convex backend (`convex/schema.ts`, `convex/lib/*`, and functions users/sessions/studios/availability/holds/bookings/waitlist/blackouts/internal/seed) and ALL 22 REST endpoints (`src/app/api/**`, `src/lib/*`). `bun run build` is green, TypeScript clean, and a 19-assertion local smoke test (`.scratch/smoke.mjs`) passes against an anonymous local Convex deployment, covering the golden path, the anti-overlap invariant (409), idempotency, validation, auth probes, and waitlist promotion. See HANDOFF.md "Local dev recipe".
 
-MISSING: CONVEX_DEPLOY_KEY from the human; all Convex code; all API endpoints except health; all UI; all tests; LOOP.md; CI; README; submission.
+WHAT THIS MEANS FOR THE LOOP: the code exists and works locally, but ZERO tests are banked on the TestSprite platform and LOOP.md does not exist yet. The 40 loop points come from running the checker against the PUBLIC url. So Phases B, D, E below are still required: write each TestSprite test, run it against https://atelier-studios-opal.vercel.app, and bank it. Some tests will pass on the first run because the code is already solid; that is fine and honest (log it plainly). Real bugs may still surface against the live Vercel runtime (timezone, env vars, cold starts, Convex prod vs local): those caught-and-fixed bugs are the most valuable LOOP.md entries.
+
+BROKEN: the Vercel production URL serves 404 (`x-vercel-error: NOT_FOUND`): the live deployment predates the scaffold push and Convex was never deployed to prod. Phase A fixes this.
+
+MISSING: CONVEX_DEPLOY_KEY (human); production Convex deploy + seed; all TestSprite tests; LOOP.md; UI; CI; README; submission.
 
 Time budget (deadline July 7, 4:59 PM PDT = 23:59 UTC): Phase A+B by July 5 midday; C+D by July 5 evening; E by July 6 midday; F by July 6 evening; G+H July 6 night; I+J July 7 morning; K July 7 by 20:00 UTC (4 hours of slack before the deadline).
 
 ## Phase A: unblock the deploy (BLOCKED ON HUMAN, verify then proceed)
 
 - [ ] A1. Human, in the Vercel dashboard for `atelier-studios`: Settings > Build and Deployment > Framework Preset = **Next.js** (it is probably "Other" because the repo only had a README at import time). Then Deployments > Redeploy latest commit (or push any commit to trigger).
-- [ ] A2. Human, same screen: set Build Command override to `npx convex deploy --cmd 'bun run build'` and add env var `CONVEX_DEPLOY_KEY` (Production scope) with a production deploy key generated in the Convex dashboard (patient-ox-888 > Settings > Deploy keys). This makes every Vercel build push Convex functions first and inject `NEXT_PUBLIC_CONVEX_URL` automatically. NOTE: until Phase C creates the `convex/` folder, this build command would fail, so human may set A2 AFTER Phase C lands; A1 alone unblocks Phase B. Agent: remind them at C6.
+- [ ] A2. Human, same screen, set THREE env vars (all environments) and the build command:
+   - `NEXT_PUBLIC_CONVEX_URL` = `https://patient-ox-888.convex.cloud` (our route handlers read this; set it explicitly, do not rely on auto-injection).
+   - `CONVEX_DEPLOY_KEY` = a Production deploy key from Convex dashboard (patient-ox-888 > Settings > Deploy keys).
+   - `INTERNAL_TASK_KEY` = any long random string (guards POST /api/internal/expire-holds; the same value is passed as the `x-internal-key` header by the TTL tests).
+   - Build Command override: `npx convex deploy --cmd 'bun run build'` (deploys Convex functions to prod, then builds Next). The `convex/` folder now exists (Phase C is done), so this will succeed.
+   Optional: also set `HOLD_TTL_SECONDS` to a small value (for example 60) in a Preview environment if you want faster TTL tests; production can keep the 600 default.
 - [ ] A3. Agent gate: `curl -sS https://atelier-studios-opal.vercel.app/api/health` returns 200 with `service: "atelier-studios"`. Do not start Phase B before this passes.
 
 ## Phase B: TestSprite bootstrap and LOOP.md birth

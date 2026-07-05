@@ -37,6 +37,9 @@ yarn-error.log*
 # agent scratch files
 /.scratch/
 
+# convex local anonymous deployment state (offline dev only)
+/.convex/
+
 # vercel
 .vercel
 
