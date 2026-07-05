@@ -6,13 +6,19 @@ type HealthPayload = {
   status: "ok";
   service: string;
   timestamp: string;
+  commit: string;
 };
 
 export function GET(): Response {
+  // VERCEL_GIT_COMMIT_SHA is injected by Vercel at build time; "local" outside Vercel.
+  // The loop polls this field to detect that a pushed fix is actually deployed
+  // before rerunning a TestSprite test (sourceRef: docs/hackathon/API_CONTRACT.md, endpoint 21).
+  const commitSha = process.env.VERCEL_GIT_COMMIT_SHA ?? "local";
   const payload: HealthPayload = {
     status: "ok",
     service: "atelier-studios",
     timestamp: new Date().toISOString(),
+    commit: commitSha.slice(0, 7),
   };
   return Response.json(payload);
 }

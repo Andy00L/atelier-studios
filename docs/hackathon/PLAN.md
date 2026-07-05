@@ -1,5 +1,7 @@
 # Execution plan: Atelier (atelier-studios)
 
+> SUPERSEDED July 5: the authoritative, fully detailed plan is now [BUILD_PLAN.md](BUILD_PLAN.md). This file stays as background context only. Execute from BUILD_PLAN.md.
+
 Window: July 5 evening to July 7, 4:59 PM PDT. The order below is loop-first: nothing is "done" until the checker has seen it. Full idea and rationale in [IDEA.md](IDEA.md); loop mechanics in [LOOP_PROTOCOL.md](LOOP_PROTOCOL.md).
 
 ## Standing rules for every step
@@ -23,8 +25,10 @@ Exit criteria: public URL live, TestSprite project exists, LOOP.md has its first
 
 ## Phase 1: data model and auth (target: 3-4 hours)
 
-1. Supabase schema: studios, slots (fixed grid), holds (TTL), bookings, waitlist entries, profiles with role (member, admin). Postgres exclusion constraint on overlapping confirmed bookings.
-2. Email/password auth via Supabase; seeded accounts: one admin, one member (static credentials for the TestSprite project settings).
+Stack note (July 5): Convex replaced Supabase (user decision). Production deployment patient-ox-888; client URL https://patient-ox-888.convex.cloud. The REST surface TestSprite tests stays on Next.js route handlers at the Vercel URL, calling Convex server-side. Read the Convex docs before writing any Convex code.
+
+1. Convex schema: studios, slots (fixed grid), holds (TTL), bookings, waitlist entries, users with role (member, admin). The anti-overlap invariant lives inside the booking mutation: Convex mutations are serializable ACID transactions, so check-then-insert is race-free there.
+2. Email/password auth (Convex Auth Password provider preferred over hand-rolled sessions; decide after reading its docs); seeded accounts: one admin, one member (static credentials for the TestSprite project settings). Auth is a trust boundary: always-on security rules apply, focused review when built, full audit at the Phase 5 freeze.
 3. Idempotent seed script (studios, opening rules, demo data).
 4. Loop: backend tests on auth probes (anonymous vs member vs admin) and health of seeded data.
 
@@ -69,9 +73,9 @@ Trigger the design-motion kit (router + playbook + SKILL_UI) before any componen
 
 ## Blocking inputs needed from the human (in order of urgency)
 
-1. TestSprite API key (create account, run setup with the agent).
-2. Supabase project URL + anon key + service role key (as environment variables, never committed).
-3. Vercel: import the GitHub repo, add the Supabase env vars, confirm the production URL.
+1. TestSprite API key: PROVIDED July 5 (stored in the CLI profile, never in the repo).
+2. Vercel: repo imported, production URL https://atelier-studios-opal.vercel.app
+3. Convex: production deployment patient-ox-888 provided. Still needed: CONVEX_DEPLOY_KEY (dashboard > deployment settings) so functions can be pushed, in .env.local only.
 4. Later: `TESTSPRITE_API_KEY` added as a GitHub Actions secret.
 
 ## Credit strategy

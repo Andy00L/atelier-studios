@@ -62,7 +62,7 @@ A member browses studios, picks a slot, gets a short-lived hold (TTL), confirms,
 ### Stack
 
 - Next.js (latest, App Router) + Bun, per project standards. One repo, API as route handlers.
-- Supabase: Postgres (with an exclusion constraint for overlap protection) and auth.
+- Convex (replaced Supabase on July 5, user decision): document database with TypeScript server functions. Convex mutations run as serializable ACID transactions, so the anti-overlap invariant is enforced inside the booking mutation (check-then-insert is race-free there). The REST surface TestSprite tests stays on Next.js route handlers at the Vercel URL, calling Convex server-side. Production deployment: patient-ox-888 (client URL https://patient-ox-888.convex.cloud, HTTP actions https://patient-ox-888.convex.site).
 - Deploy: Vercel (native Next.js host; per-PR preview deployments pair with the CLI's `--target-url` for CI testing). Railway/Render stay as plan B if a persistent worker ever becomes necessary; the lazy TTL design avoids needing one. Public URL on day one, before any feature work.
 - GitHub repo name: `atelier-studios` (product name in UI and README: Atelier).
 - CI: GitHub Actions gated on TestSprite (backend `--all` plus a scripted frontend test-id loop).
