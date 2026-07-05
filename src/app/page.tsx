@@ -1,65 +1,70 @@
-import Image from "next/image";
+// Landing gallery: the studios as labelled exhibits. Server-rendered from Convex
+// at request time. sourceRef: docs/UI_DESIGN_SYSTEM.md, API_CONTRACT.md.
 
-export default function Home() {
+import Link from "next/link";
+import { fetchQuery } from "convex/nextjs";
+import { api } from "@/convex/_generated/api";
+import { Placard } from "@/components/ui/primitives";
+import { formatOpenHours, formatPrice } from "@/lib/format";
+import type { Studio } from "@/lib/types";
+
+export const dynamic = "force-dynamic";
+
+function StudioCard({ studio }: { studio: Studio }) {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <Link
+      href={`/studios/${studio.slug}`}
+      data-testid={`studio-card-${studio.slug}`}
+      className="group card overflow-hidden p-0 transition-transform duration-200 hover:-translate-y-0.5"
+    >
+      <div className="relative flex h-40 items-end bg-gradient-to-br from-accent-deep/40 via-surface-raised to-field p-4">
+        <span className="font-display text-2xl font-semibold text-ink/90">{studio.name}</span>
+      </div>
+      <div className="flex flex-col gap-4 p-6">
+        <p className="text-sm leading-relaxed text-muted">{studio.description}</p>
+        <div className="flex flex-wrap gap-2">
+          {studio.equipment.map((item) => (
+            <span
+              key={item}
+              className="rounded-full border border-hairline px-2.5 py-1 text-xs text-faint"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+              {item}
+            </span>
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="flex flex-col gap-2">
+          <Placard label="Rate">{formatPrice(studio.hourlyPriceCents)} / hour</Placard>
+          <Placard label="Open">{formatOpenHours(studio.openHour, studio.closeHour)}</Placard>
         </div>
-      </main>
+        <span className="mt-1 text-sm font-medium text-accent transition-colors group-hover:brightness-110">
+          View and book
+        </span>
+      </div>
+    </Link>
+  );
+}
+
+export default async function HomePage() {
+  const studios = await fetchQuery(api.studios.listActive, {});
+
+  return (
+    <div className="mx-auto max-w-6xl px-6 py-16">
+      <section className="mb-14 max-w-2xl">
+        <p className="eyebrow mb-3">Creative studios, by the hour</p>
+        <h1 className="font-display text-5xl font-semibold leading-[1.05] tracking-tight text-ink">
+          Book the room where the work gets made.
+        </h1>
+        <p className="mt-5 text-lg leading-relaxed text-muted">
+          Photo, music, and podcast studios with live availability, short-lived holds,
+          and a waitlist that promotes the moment a slot frees.
+        </p>
+      </section>
+
+      <section className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3" data-testid="studio-gallery">
+        {studios.map((studio) => (
+          <StudioCard key={studio.id} studio={studio} />
+        ))}
+      </section>
     </div>
   );
 }
