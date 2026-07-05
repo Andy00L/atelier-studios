@@ -37,7 +37,7 @@ Time budget (deadline July 7, 4:59 PM PDT = 23:59 UTC): Phase A+B by July 5 midd
 
 ## Phase A: unblock the deploy (BLOCKED ON HUMAN, verify then proceed)
 
-- [ ] A1. Human, in the Vercel dashboard for `atelier-studios`: Settings > Build and Deployment > Framework Preset = **Next.js** (it is probably "Other" because the repo only had a README at import time). Then Deployments > Redeploy latest commit (or push any commit to trigger).
+- [x] A1. ROOT CAUSE of the 404 found July 5 (Vercel screenshot): Root Directory was set to `src`. The Next.js app is at the REPO ROOT; `src/` is only the source dir inside it, so Vercel built an empty dir and served 404. FIX: Settings > Build and Deployment > Root Directory: clear `src`, leave EMPTY, Save. Framework Preset = Next.js (was already correct). Leave all build Override toggles OFF (default `next build` is right). This alone makes /api/health return 200 (health does not use Convex).
 - [ ] A2. Human, same screen, set THREE env vars (all environments) and the build command:
    - `NEXT_PUBLIC_CONVEX_URL` = `https://patient-ox-888.convex.cloud` (our route handlers read this; set it explicitly, do not rely on auto-injection).
    - `CONVEX_DEPLOY_KEY` = a Production deploy key from Convex dashboard (patient-ox-888 > Settings > Deploy keys).
