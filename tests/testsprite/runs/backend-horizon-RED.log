@@ -1,0 +1,16 @@
+testId      f82bed14-3f19-4cdb-ab9c-43b0801666e9
+type        backend
+codeVersion v1
+createdAt   2026-07-06T07:46:37.408Z
+
+runId       c73ac75f-9712-4ebf-8111-44ab8cd29b2a
+testId      f82bed14-3f19-4cdb-ab9c-43b0801666e9
+status      failed
+createdAt   2026-07-06T07:46:37.528Z
+finishedAt  2026-07-06T07:46:41.861Z
+failureKind unknown
+error       availability reported 36 free slots beyond the 30-day horizon, but holds reject them: [{'endTs': 1786006800000, 'startTs': 1786003200000, 'status': 'free'}, {'endTs': 1786010400000, 'startTs': 1786006…
+steps       n/a (backend)
+dashboard   https://www.testsprite.com/dashboard/tests/bdd79882-cb60-4618-87fb-f688c27cee41/test/f82bed14-3f19-4cdb-ab9c-43b0801666e9
+Run finished with status: failed. Use 'testsprite test artifact get c73ac75f-9712-4ebf-8111-44ab8cd29b2a' to download the failure bundle.
+Error: Run c73ac75f-9712-4ebf-8111-44ab8cd29b2a finished with status: failed

@@ -26,6 +26,7 @@ export type FailureReason =
   | "outside_cancel_window"
   | "slot_not_full"
   | "already_waitlisted"
+  | "beyond_horizon"
   | "email_taken";
 
 const REASON_TO_ERROR: Record<FailureReason, { code: ApiErrorCode; message: string }> = {
@@ -48,6 +49,10 @@ const REASON_TO_ERROR: Record<FailureReason, { code: ApiErrorCode; message: stri
   already_waitlisted: {
     code: "ALREADY_WAITLISTED",
     message: "You are already on the waitlist for that slot.",
+  },
+  beyond_horizon: {
+    code: "BEYOND_HORIZON",
+    message: "That time slot is too far ahead to book.",
   },
   email_taken: { code: "EMAIL_TAKEN", message: "An account with that email already exists." },
 };

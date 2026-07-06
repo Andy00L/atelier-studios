@@ -3,7 +3,13 @@
 
 import { query } from "./_generated/server";
 import { v } from "convex/values";
-import { AVAILABILITY_RANGE_MAX_DAYS, MS_PER_DAY, MS_PER_MINUTE, SLOT_MINUTES } from "./lib/rules";
+import {
+  AVAILABILITY_RANGE_MAX_DAYS,
+  BOOKING_HORIZON_DAYS,
+  MS_PER_DAY,
+  MS_PER_MINUTE,
+  SLOT_MINUTES,
+} from "./lib/rules";
 import { utcHourOf } from "./lib/time";
 
 type SlotStatus = "free" | "held" | "booked" | "blackout" | "past";
@@ -67,6 +73,9 @@ export const getForStudio = query({
       const hour = utcHourOf(slotStart);
       if (hour < studio.openHour || hour >= studio.closeHour) {
         continue; // outside the studio's open hours: not a bookable slot
+      }
+      if (slotStart > now + BOOKING_HORIZON_DAYS * MS_PER_DAY) {
+        continue; // beyond the booking horizon: a hold would reject it, so it is not free
       }
       let status: SlotStatus;
       if (slotStart < now) {

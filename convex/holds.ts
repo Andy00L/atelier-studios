@@ -42,7 +42,7 @@ export const create = mutation({
     const now = Date.now();
     if (args.startTs < now) return { ok: false as const, reason: "slot_in_past" as const };
     if (args.startTs > now + BOOKING_HORIZON_DAYS * MS_PER_DAY) {
-      return { ok: false as const, reason: "validation" as const };
+      return { ok: false as const, reason: "beyond_horizon" as const };
     }
     const hour = utcHourOf(args.startTs);
     if (hour < studio.openHour || hour >= studio.closeHour) {

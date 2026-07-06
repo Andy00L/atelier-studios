@@ -18,6 +18,7 @@ export type ApiErrorCode =
   | "HOLD_EXPIRED"
   | "SLOT_IN_PAST"
   | "OUTSIDE_OPEN_HOURS"
+  | "BEYOND_HORIZON"
   | "EMAIL_TAKEN";
 
 // The HTTP status that must accompany each code. sourceRef: API_CONTRACT.md.
@@ -33,6 +34,7 @@ const STATUS_BY_CODE: Record<ApiErrorCode, number> = {
   HOLD_EXPIRED: 410,
   SLOT_IN_PAST: 422,
   OUTSIDE_OPEN_HOURS: 422,
+  BEYOND_HORIZON: 422,
   EMAIL_TAKEN: 409,
 };
 

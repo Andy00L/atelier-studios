@@ -10,6 +10,7 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import { apiRequest } from "@/lib/api-client";
 import { Button, Skeleton } from "@/components/ui/primitives";
 import { formatDate, formatPrice, formatSlotRange } from "@/lib/format";
+import { CANCEL_CUTOFF_HOURS } from "@/convex/lib/rules";
 import type { Booking, Studio, WaitlistEntry } from "@/lib/types";
 
 const HOUR_MS = 60 * 60 * 1000; // slot durations are whole hours; sourceRef: convex/lib/rules
@@ -40,6 +41,7 @@ export default function DashboardPage() {
   const [error, setError] = useState<string | null>(null);
   const [cancellingId, setCancellingId] = useState<string | null>(null);
   const [tab, setTab] = useState<Tab>("bookings");
+  const [nowMs, setNowMs] = useState(0);
 
   const loadData = useCallback(async () => {
     if (!token) return;
@@ -52,6 +54,7 @@ export default function DashboardPage() {
     if (myBookings.ok) setBookings(myBookings.data);
     if (myWaitlist.ok) setWaitlist(myWaitlist.data);
     setLoaded(true);
+    setNowMs(Date.now());
   }, [token]);
 
   // Sync with the bookings/waitlist API (external) on mount and session change.
@@ -182,16 +185,24 @@ export default function DashboardPage() {
             <div className="flex flex-col gap-3" data-testid="bookings-list">
               {activeBookings.map((booking, index) => {
                 const busy = cancellingId === booking.id;
+                const cancellable = nowMs > 0 && booking.startTs - nowMs > CANCEL_CUTOFF_HOURS * HOUR_MS;
+                const isPast = nowMs > 0 && booking.startTs <= nowMs;
                 return (
                   <div key={booking.id} className="atl-card p-[22px_24px]" style={{ animation: "atl-cardIn .45s var(--ease-enter) both", animationDelay: `${index * 50}ms` }}>
                     <div className="flex items-start justify-between gap-4">
                       <h3 className="font-display text-[1.125rem] font-semibold text-ink">
                         {studioNames.get(booking.studioId) ?? "Studio"}
                       </h3>
-                      <Button variant="destructive" testId="cancel-booking-btn" loading={busy} onClick={() => cancelBooking(booking.id)} aria-label={`Cancel booking at ${studioNames.get(booking.studioId) ?? "studio"}`}>
-                        {busy ? null : <TrashIcon />}
-                        {busy ? "Cancelling..." : "Cancel"}
-                      </Button>
+                      {cancellable ? (
+                        <Button variant="destructive" testId="cancel-booking-btn" loading={busy} onClick={() => cancelBooking(booking.id)} aria-label={`Cancel booking at ${studioNames.get(booking.studioId) ?? "studio"}`}>
+                          {busy ? null : <TrashIcon />}
+                          {busy ? "Cancelling..." : "Cancel"}
+                        </Button>
+                      ) : (
+                        <span className="rounded-full border border-line px-3 py-1.5 text-[12px] font-medium text-faint" data-testid="booking-locked">
+                          {isPast ? "Completed" : "Starts soon"}
+                        </span>
+                      )}
                     </div>
                     <div className="mt-[10px]">
                       <div className="atl-placard"><span className="atl-eyebrow">Reference</span><span className="atl-val-mono">{booking.reference}</span></div>
