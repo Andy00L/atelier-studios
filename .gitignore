@@ -54,3 +54,4 @@ next-env.d.ts
 
 # TestSprite CLI local cache
 /.testsprite/
+/docs/video/testspriteintro.mp4
