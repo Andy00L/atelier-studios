@@ -1,0 +1,34 @@
+idempotency-key: cli-create-5caea50d-2cd9-4a97-ba65-1d9ea8797076
+{
+  "testId": "d4a35822-a6fc-4fab-bc41-fb04c4df3ecf",
+  "type": "backend",
+  "codeVersion": "v1",
+  "createdAt": "2026-07-06T01:16:17.468Z",
+  "dashboardUrl": "https://www.testsprite.com/dashboard/tests/bdd79882-cb60-4618-87fb-f688c27cee41/test/d4a35822-a6fc-4fab-bc41-fb04c4df3ecf",
+  "run": {
+    "runId": "0be83e94-38ef-4740-ab6f-5d1f6f103a07",
+    "testId": "d4a35822-a6fc-4fab-bc41-fb04c4df3ecf",
+    "projectId": "bdd79882-cb60-4618-87fb-f688c27cee41",
+    "userId": "e428b4a8-60f1-701f-4eb7-443f4980caf5",
+    "status": "passed",
+    "source": "cli",
+    "createdAt": "2026-07-06T01:16:17.612Z",
+    "startedAt": null,
+    "finishedAt": "2026-07-06T01:16:21.329Z",
+    "codeVersion": null,
+    "targetUrl": null,
+    "createdFrom": null,
+    "failedStepIndex": null,
+    "failureKind": null,
+    "videoUrl": null,
+    "error": "",
+    "stepSummary": {
+      "total": 0,
+      "completed": 0,
+      "passedCount": 0,
+      "failedCount": 0
+    },
+    "dashboardUrl": "https://www.testsprite.com/dashboard/tests/bdd79882-cb60-4618-87fb-f688c27cee41/test/d4a35822-a6fc-4fab-bc41-fb04c4df3ecf"
+  }
+}
+requestId: cli_0438c28a-4815-4901-875c-2f16af18b1c8

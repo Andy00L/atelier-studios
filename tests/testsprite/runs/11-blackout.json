@@ -1,0 +1,34 @@
+idempotency-key: cli-create-99417cf7-f964-42e5-9fa9-f129540814ce
+{
+  "testId": "bf3d0177-fe10-41fc-b383-a96694d27d53",
+  "type": "backend",
+  "codeVersion": "v1",
+  "createdAt": "2026-07-06T01:16:22.373Z",
+  "dashboardUrl": "https://www.testsprite.com/dashboard/tests/bdd79882-cb60-4618-87fb-f688c27cee41/test/bf3d0177-fe10-41fc-b383-a96694d27d53",
+  "run": {
+    "runId": "87361353-d643-477d-873d-a34c6fc0ed69",
+    "testId": "bf3d0177-fe10-41fc-b383-a96694d27d53",
+    "projectId": "bdd79882-cb60-4618-87fb-f688c27cee41",
+    "userId": "e428b4a8-60f1-701f-4eb7-443f4980caf5",
+    "status": "passed",
+    "source": "cli",
+    "createdAt": "2026-07-06T01:16:22.519Z",
+    "startedAt": null,
+    "finishedAt": "2026-07-06T01:16:23.937Z",
+    "codeVersion": null,
+    "targetUrl": null,
+    "createdFrom": null,
+    "failedStepIndex": null,
+    "failureKind": null,
+    "videoUrl": null,
+    "error": "",
+    "stepSummary": {
+      "total": 0,
+      "completed": 0,
+      "passedCount": 0,
+      "failedCount": 0
+    },
+    "dashboardUrl": "https://www.testsprite.com/dashboard/tests/bdd79882-cb60-4618-87fb-f688c27cee41/test/bf3d0177-fe10-41fc-b383-a96694d27d53"
+  }
+}
+requestId: cli_331dd292-a04c-45ce-8b84-4cb6ec55e069

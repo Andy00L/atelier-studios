@@ -378,3 +378,108 @@ Run finished with status: blocked. Use 'testsprite test artifact get 9c508542-14
 {
   "error": "Run 9c508542-14c8-443d-86a7-3636098802fd finished with status: blocked"
 }
+### 2026-07-06T01:16:17Z create+run: admin studio crud
+idempotency-key: cli-create-5caea50d-2cd9-4a97-ba65-1d9ea8797076
+{
+  "testId": "d4a35822-a6fc-4fab-bc41-fb04c4df3ecf",
+  "type": "backend",
+  "codeVersion": "v1",
+  "createdAt": "2026-07-06T01:16:17.468Z",
+  "dashboardUrl": "https://www.testsprite.com/dashboard/tests/bdd79882-cb60-4618-87fb-f688c27cee41/test/d4a35822-a6fc-4fab-bc41-fb04c4df3ecf",
+  "run": {
+    "runId": "0be83e94-38ef-4740-ab6f-5d1f6f103a07",
+    "testId": "d4a35822-a6fc-4fab-bc41-fb04c4df3ecf",
+    "projectId": "bdd79882-cb60-4618-87fb-f688c27cee41",
+    "userId": "e428b4a8-60f1-701f-4eb7-443f4980caf5",
+    "status": "passed",
+    "source": "cli",
+    "createdAt": "2026-07-06T01:16:17.612Z",
+    "startedAt": null,
+    "finishedAt": "2026-07-06T01:16:21.329Z",
+    "codeVersion": null,
+    "targetUrl": null,
+    "createdFrom": null,
+    "failedStepIndex": null,
+    "failureKind": null,
+    "videoUrl": null,
+    "error": "",
+    "stepSummary": {
+      "total": 0,
+      "completed": 0,
+      "passedCount": 0,
+      "failedCount": 0
+    },
+    "dashboardUrl": "https://www.testsprite.com/dashboard/tests/bdd79882-cb60-4618-87fb-f688c27cee41/test/d4a35822-a6fc-4fab-bc41-fb04c4df3ecf"
+  }
+}
+requestId: cli_0438c28a-4815-4901-875c-2f16af18b1c8
+### 2026-07-06T01:16:21Z create+run: blackout cancels booking
+idempotency-key: cli-create-99417cf7-f964-42e5-9fa9-f129540814ce
+{
+  "testId": "bf3d0177-fe10-41fc-b383-a96694d27d53",
+  "type": "backend",
+  "codeVersion": "v1",
+  "createdAt": "2026-07-06T01:16:22.373Z",
+  "dashboardUrl": "https://www.testsprite.com/dashboard/tests/bdd79882-cb60-4618-87fb-f688c27cee41/test/bf3d0177-fe10-41fc-b383-a96694d27d53",
+  "run": {
+    "runId": "87361353-d643-477d-873d-a34c6fc0ed69",
+    "testId": "bf3d0177-fe10-41fc-b383-a96694d27d53",
+    "projectId": "bdd79882-cb60-4618-87fb-f688c27cee41",
+    "userId": "e428b4a8-60f1-701f-4eb7-443f4980caf5",
+    "status": "passed",
+    "source": "cli",
+    "createdAt": "2026-07-06T01:16:22.519Z",
+    "startedAt": null,
+    "finishedAt": "2026-07-06T01:16:23.937Z",
+    "codeVersion": null,
+    "targetUrl": null,
+    "createdFrom": null,
+    "failedStepIndex": null,
+    "failureKind": null,
+    "videoUrl": null,
+    "error": "",
+    "stepSummary": {
+      "total": 0,
+      "completed": 0,
+      "passedCount": 0,
+      "failedCount": 0
+    },
+    "dashboardUrl": "https://www.testsprite.com/dashboard/tests/bdd79882-cb60-4618-87fb-f688c27cee41/test/bf3d0177-fe10-41fc-b383-a96694d27d53"
+  }
+}
+requestId: cli_331dd292-a04c-45ce-8b84-4cb6ec55e069
+### 2026-07-06T01:16:24Z create+run: hold ownership edges
+idempotency-key: cli-create-10eee199-a4aa-48b7-908d-cc256de0d245
+{
+  "testId": "89beffe2-27cc-4e65-ad86-555529d25d7c",
+  "type": "backend",
+  "codeVersion": "v1",
+  "createdAt": "2026-07-06T01:16:25.148Z",
+  "dashboardUrl": "https://www.testsprite.com/dashboard/tests/bdd79882-cb60-4618-87fb-f688c27cee41/test/89beffe2-27cc-4e65-ad86-555529d25d7c",
+  "run": {
+    "runId": "d2254b2d-e3f0-48ae-a876-e8c38b70b16d",
+    "testId": "89beffe2-27cc-4e65-ad86-555529d25d7c",
+    "projectId": "bdd79882-cb60-4618-87fb-f688c27cee41",
+    "userId": "e428b4a8-60f1-701f-4eb7-443f4980caf5",
+    "status": "passed",
+    "source": "cli",
+    "createdAt": "2026-07-06T01:16:25.251Z",
+    "startedAt": null,
+    "finishedAt": "2026-07-06T01:16:26.324Z",
+    "codeVersion": null,
+    "targetUrl": null,
+    "createdFrom": null,
+    "failedStepIndex": null,
+    "failureKind": null,
+    "videoUrl": null,
+    "error": "",
+    "stepSummary": {
+      "total": 0,
+      "completed": 0,
+      "passedCount": 0,
+      "failedCount": 0
+    },
+    "dashboardUrl": "https://www.testsprite.com/dashboard/tests/bdd79882-cb60-4618-87fb-f688c27cee41/test/89beffe2-27cc-4e65-ad86-555529d25d7c"
+  }
+}
+requestId: cli_fd90d53b-8a7e-4a45-96b7-13afa2e528b5

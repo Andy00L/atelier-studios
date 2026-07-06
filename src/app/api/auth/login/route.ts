@@ -14,6 +14,13 @@ import { apiError, apiOk, serverError } from "@/lib/http";
 
 const TOKEN_BYTES = 32;
 
+// A valid scrypt hash of a throwaway value (not a secret). When the email is
+// unknown, the route still runs one scrypt against this so an unknown email and a
+// wrong password take the same time, closing the email-enumeration timing channel.
+// sourceRef: docs/hackathon/AUDIT.md (finding SEC-1).
+const DUMMY_PASSWORD_HASH =
+  "scrypt$16384$8$1$Lhbv4YAOBBW6/ZbyKEpA2A==$0sKiL5ZX+FswzVheDu71cwV/3GVEzlOa/hE6eyyRNr2FLQOcM6ew6qFXQS0SWKkukH6WwenhKdPHcvz3DENc0g==";
+
 export async function POST(request: Request) {
   const parsed = await readJsonObject(request);
   if (!parsed.ok) return apiError("VALIDATION_ERROR", "Body must be a JSON object.");
@@ -25,6 +32,8 @@ export async function POST(request: Request) {
 
   const material = await fetchQuery(api.users.getAuthMaterialByEmail, { email });
   if (material === null) {
+    // Burn an equivalent scrypt so timing does not reveal that the email is unknown.
+    await verifyPassword(password, DUMMY_PASSWORD_HASH);
     return apiError("UNAUTHORIZED", "Invalid email or password.");
   }
 
