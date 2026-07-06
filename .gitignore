@@ -37,6 +37,9 @@ yarn-error.log*
 # agent scratch files
 /.scratch/
 
+# design-loop working files (Claude Design prompt pack, palette card, renders)
+/docs/design/
+
 # convex local anonymous deployment state (offline dev only)
 /.convex/
 
