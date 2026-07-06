@@ -1,0 +1,67 @@
+Dispatched 8 tests.
+Batch run complete: 8/8 passed, 0 failed/blocked, 0 timed out
+Dashboard: https://www.testsprite.com/dashboard/tests/bdd79882-cb60-4618-87fb-f688c27cee41
+{
+  "accepted": [
+    {
+      "testId": "e81dea22-3b21-4a4e-ada8-d811596cfdef",
+      "runId": "55da24e5-89ca-47a9-ac0e-fa42db620d51",
+      "status": "passed",
+      "dashboardUrl": "https://www.testsprite.com/dashboard/tests/bdd79882-cb60-4618-87fb-f688c27cee41/test/e81dea22-3b21-4a4e-ada8-d811596cfdef"
+    },
+    {
+      "testId": "0606dc51-e752-4b5f-a2ff-c7448c4dfb60",
+      "runId": "91af3f08-88aa-4735-974b-3eeb8af8a26c",
+      "status": "passed",
+      "dashboardUrl": "https://www.testsprite.com/dashboard/tests/bdd79882-cb60-4618-87fb-f688c27cee41/test/0606dc51-e752-4b5f-a2ff-c7448c4dfb60"
+    },
+    {
+      "testId": "93bb4fb9-efe8-4bc2-bc80-a677338d3df7",
+      "runId": "06484eb3-8ecb-4c70-be45-59b05d5e9b5c",
+      "status": "passed",
+      "dashboardUrl": "https://www.testsprite.com/dashboard/tests/bdd79882-cb60-4618-87fb-f688c27cee41/test/93bb4fb9-efe8-4bc2-bc80-a677338d3df7"
+    },
+    {
+      "testId": "89beffe2-27cc-4e65-ad86-555529d25d7c",
+      "runId": "5eeb68a3-3754-479f-bb4e-ac0511e3b9e5",
+      "status": "passed",
+      "dashboardUrl": "https://www.testsprite.com/dashboard/tests/bdd79882-cb60-4618-87fb-f688c27cee41/test/89beffe2-27cc-4e65-ad86-555529d25d7c"
+    },
+    {
+      "testId": "ea121ed6-a51d-4529-a942-6230bb740649",
+      "runId": "16cb678a-7499-4ae0-acf0-e3dcc56c9ced",
+      "status": "passed",
+      "dashboardUrl": "https://www.testsprite.com/dashboard/tests/bdd79882-cb60-4618-87fb-f688c27cee41/test/ea121ed6-a51d-4529-a942-6230bb740649"
+    },
+    {
+      "testId": "bf3d0177-fe10-41fc-b383-a96694d27d53",
+      "runId": "69a9a689-5bb6-476b-9d9c-ac8adcdae169",
+      "status": "passed",
+      "dashboardUrl": "https://www.testsprite.com/dashboard/tests/bdd79882-cb60-4618-87fb-f688c27cee41/test/bf3d0177-fe10-41fc-b383-a96694d27d53"
+    },
+    {
+      "testId": "d4a35822-a6fc-4fab-bc41-fb04c4df3ecf",
+      "runId": "6a46ce3b-6b4b-42df-99de-9dac2e743005",
+      "status": "passed",
+      "dashboardUrl": "https://www.testsprite.com/dashboard/tests/bdd79882-cb60-4618-87fb-f688c27cee41/test/d4a35822-a6fc-4fab-bc41-fb04c4df3ecf"
+    },
+    {
+      "testId": "82fe4dfd-20b9-4238-8533-574c47197659",
+      "runId": "c1705897-e6cf-4035-b95c-5fa6046bc4fc",
+      "status": "passed",
+      "dashboardUrl": "https://www.testsprite.com/dashboard/tests/bdd79882-cb60-4618-87fb-f688c27cee41/test/82fe4dfd-20b9-4238-8533-574c47197659"
+    }
+  ],
+  "conflicts": [],
+  "deferred": [],
+  "skippedFrontend": [],
+  "skippedIntegration": [],
+  "summary": {
+    "passed": 8,
+    "failed": 0,
+    "timedOut": 0,
+    "deferred": 0,
+    "conflicts": 0,
+    "total": 8
+  }
+}
