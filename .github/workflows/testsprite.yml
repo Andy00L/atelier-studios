@@ -1,0 +1,45 @@
+# Gate every pull request on the TestSprite backend suite. A failing test fails
+# the build. sourceRef: docs/hackathon/LOOP_PROTOCOL.md, docs.testsprite.com/cli/integrations/ci-cd.
+name: testsprite
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    env:
+      TESTSPRITE_API_KEY: ${{ secrets.TESTSPRITE_API_KEY }}
+      # Backend project on the TestSprite platform (account andy.luemba@protonmail.com).
+      BACKEND_PROJECT_ID: bdd79882-cb60-4618-87fb-f688c27cee41
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install the TestSprite CLI
+        run: npm install -g @testsprite/testsprite-cli
+
+      - name: Run the backend suite against the live app
+        run: >
+          testsprite test run --all
+          --project "$BACKEND_PROJECT_ID"
+          --wait --timeout 600 --output json
+          --idempotency-key "ci-${{ github.run_id }}-${{ github.run_attempt }}"
+          | tee result.json
+
+      - name: Collect the failure bundle on red
+        if: failure()
+        run: >
+          testsprite test failure get "$(jq -r '.run.testId // empty' result.json)"
+          --out ./.testsprite/failure --failed-only || true
+
+      - name: Upload the failure bundle
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: testsprite-failure
+          path: .testsprite/failure
+          if-no-files-found: ignore

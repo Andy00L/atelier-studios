@@ -1,0 +1,31 @@
+idempotency-key: cli-run-114ced01-c63d-48c2-9470-945d7e073595
+{
+  "runId": "43a64459-766b-4848-b120-f06a2a959ff3",
+  "testId": "7f8c6313-a7b1-46c5-a2b4-4aa480b4c865",
+  "projectId": "310cfc78-d7b7-4bc9-949b-6866c980735a",
+  "userId": "e428b4a8-60f1-701f-4eb7-443f4980caf5",
+  "status": "blocked",
+  "source": "cli",
+  "createdAt": "2026-07-06T00:48:38.361Z",
+  "startedAt": "2026-07-06T00:48:38.656Z",
+  "finishedAt": "2026-07-06T00:53:00.261Z",
+  "codeVersion": "v1",
+  "targetUrl": "https://atelier-studios-opal.vercel.app",
+  "createdFrom": null,
+  "failedStepIndex": null,
+  "failureKind": null,
+  "videoUrl": "https://testsprite-videos.s3.us-east-1.amazonaws.com/e428b4a8-60f1-701f-4eb7-443f4980caf5/1783299180021516//tmp/918752c3-0bf4-4eb1-853d-be3c19987dca/result.webm",
+  "error": "TEST BLOCKED: Result: PASS — Booking confirmation observed.\n\nVerification against the user request:\n- Requirement: Signed-in member opens a studio, holds a slot, confirms it, and sees a booking confirmation with a reference starting with 'ATL-'.\n  - Verified: The page shows a prominent heading 'Booking confirmed'.\n  - Verified: The booking reference shown on the page is 'ATL-PX5FD8', which starts with 'ATL-'.\n  - Verified: Booking details match the action performed (Aurora Photo Studio, Mon, Jul 6, 10:00-11:00 UTC) and total $80 is displayed.\n\nAll requested assertions are satisfied and observed directly on the page (visible in the screenshot and page content). The task is complete.",
+  "stepSummary": {
+    "total": 9,
+    "completed": 9,
+    "passedCount": 9,
+    "failedCount": 0
+  },
+  "dashboardUrl": "https://www.testsprite.com/dashboard/tests/310cfc78-d7b7-4bc9-949b-6866c980735a/test/7f8c6313-a7b1-46c5-a2b4-4aa480b4c865"
+}
+requestId: cli_aba8552f-154f-4e8e-9813-1f51c29fb647
+Run finished with status: blocked. Use 'testsprite test artifact get 43a64459-766b-4848-b120-f06a2a959ff3' to download the failure bundle.
+{
+  "error": "Run 43a64459-766b-4848-b120-f06a2a959ff3 finished with status: blocked"
+}

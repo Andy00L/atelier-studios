@@ -1,0 +1,89 @@
+{
+  "items": [
+    {
+      "testId": "24f81980-2d53-4876-b472-9561d8cf45aa",
+      "stepIndex": 1,
+      "action": "navigate",
+      "description": "Navigate to https://atelier-studios-opal.vercel.app",
+      "status": "passed",
+      "screenshotUrl": null,
+      "htmlSnapshotUrl": "https://frontend-test-recordings-production.s3.us-east-1.amazonaws.com/raw_html/24f81980-2d53-4876-b472-9561d8cf45aa/001.html?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZQ3DRZAIJAD7MRUV%2F20260706%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260706T005731Z&X-Amz-Expires=900&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHwaCXVzLWVhc3QtMSJIMEYCIQCaobfe%2FLxQZqyrCJbwXwFfDacYz9p8Ob3I6CfHt7odSAIhAJtxZOIf%2BxYcYMRWo0CJuhlrwt6xRO4JsdhT1HKZEZsgKvsDCEUQABoMNjU0NjU0NDI1MTA0Igzot2z2YApx%2BbCRcVMq2AOAr0mb8SLjqHaGWCT6cOEv57chEmeqm%2F4OW5SOD3SMO%2BIP8DNcHyp%2BIOWPuUoN5rOSPDksy%2BnEPTQpR8ZQrdgYu%2B5txMTewPUH2O5%2F%2BP3EqxDmIuJChKrXezGCpMTqbnjKOWFARUihBv4BB7JjlAHP7wm%2FNPzXGMc8udKcKiplKvTxeWupj6zRRePFUQHDg5xrS36w%2FHYb%2FWq1baNSiEmNmbv4rnuPigAAhNdXk%2Fh7uTL2ZzUmc6Q%2B%2FdXgqM%2BqhmZUJAs6x0Cnv0H%2BgkbPkK49Zicu0bN6kQ3XF1LGrHKRXkT3CeDy1REh9287dJTH45HIzhrL9TPXI%2BWEG4IXAE8s14iyorRd6IQRR%2FL9lh5xIs%2B8mrgWBicR9gw%2FIGU76Zzi8CLV5rRpFkE3RRWruACn0kcRNTnO%2FLnhWG7B6SkazVggLJcX5FjY%2Bdg83jlf45hdEdXkRDLoxN7%2BknyNpurbdY8GQ7fA5FpPmFs2Sdpv8%2FSj2iRbf5KWFImM%2BC4iSPcDNLf1iI%2FW8%2FA8kBIjYfc4PzHlsPHcNC%2FuwfdQEtwS16U%2Fw271JaUmzYmhhUK0bQA5R3WajR1BIAz9DP2O%2FoLKTHusPCZpWHQrMem9hs8LJopDlSKtVKEOMKPrqtIGOqQBXYRIYtSuehNQwplWLjlJp01icFboDDzfmCV9paIWqVgYXRddiwENIi1RbY4SBhvGQsLWjiiwTjBemWIc55WXWKCu%2B7uPERcbM4FqDUEoP2ncC8VLkH2MPEss7R9HKXjjMvvHdmyRr%2BK9eEwJ5QFE5LP8ewhS9bBhG7g3%2FCCLHa%2F3wPsJLd27g%2BBCbEMW1Y20E41Gmgfnpgu181PdHtyiBPiswZs%3D&X-Amz-Signature=697d54915a424bb87ff234beb3c6ff0e46ec8772fda864fd740847d3abeb9d90&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+      "runIdIfAvailable": "dbf290da-3a83-46bc-a518-e2df899be6ce",
+      "codeVersion": null,
+      "capturedAt": null,
+      "updatedAt": "2026-07-06T00:55:30.551800+00:00",
+      "outcomeContributesToFailure": null
+    },
+    {
+      "testId": "24f81980-2d53-4876-b472-9561d8cf45aa",
+      "stepIndex": 2,
+      "action": "click",
+      "description": "Click the 'Sign in' button in the page header to open the login page",
+      "status": "passed",
+      "screenshotUrl": null,
+      "htmlSnapshotUrl": "https://frontend-test-recordings-production.s3.us-east-1.amazonaws.com/raw_html/24f81980-2d53-4876-b472-9561d8cf45aa/002.html?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZQ3DRZAIJAD7MRUV%2F20260706%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260706T005731Z&X-Amz-Expires=900&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHwaCXVzLWVhc3QtMSJIMEYCIQCaobfe%2FLxQZqyrCJbwXwFfDacYz9p8Ob3I6CfHt7odSAIhAJtxZOIf%2BxYcYMRWo0CJuhlrwt6xRO4JsdhT1HKZEZsgKvsDCEUQABoMNjU0NjU0NDI1MTA0Igzot2z2YApx%2BbCRcVMq2AOAr0mb8SLjqHaGWCT6cOEv57chEmeqm%2F4OW5SOD3SMO%2BIP8DNcHyp%2BIOWPuUoN5rOSPDksy%2BnEPTQpR8ZQrdgYu%2B5txMTewPUH2O5%2F%2BP3EqxDmIuJChKrXezGCpMTqbnjKOWFARUihBv4BB7JjlAHP7wm%2FNPzXGMc8udKcKiplKvTxeWupj6zRRePFUQHDg5xrS36w%2FHYb%2FWq1baNSiEmNmbv4rnuPigAAhNdXk%2Fh7uTL2ZzUmc6Q%2B%2FdXgqM%2BqhmZUJAs6x0Cnv0H%2BgkbPkK49Zicu0bN6kQ3XF1LGrHKRXkT3CeDy1REh9287dJTH45HIzhrL9TPXI%2BWEG4IXAE8s14iyorRd6IQRR%2FL9lh5xIs%2B8mrgWBicR9gw%2FIGU76Zzi8CLV5rRpFkE3RRWruACn0kcRNTnO%2FLnhWG7B6SkazVggLJcX5FjY%2Bdg83jlf45hdEdXkRDLoxN7%2BknyNpurbdY8GQ7fA5FpPmFs2Sdpv8%2FSj2iRbf5KWFImM%2BC4iSPcDNLf1iI%2FW8%2FA8kBIjYfc4PzHlsPHcNC%2FuwfdQEtwS16U%2Fw271JaUmzYmhhUK0bQA5R3WajR1BIAz9DP2O%2FoLKTHusPCZpWHQrMem9hs8LJopDlSKtVKEOMKPrqtIGOqQBXYRIYtSuehNQwplWLjlJp01icFboDDzfmCV9paIWqVgYXRddiwENIi1RbY4SBhvGQsLWjiiwTjBemWIc55WXWKCu%2B7uPERcbM4FqDUEoP2ncC8VLkH2MPEss7R9HKXjjMvvHdmyRr%2BK9eEwJ5QFE5LP8ewhS9bBhG7g3%2FCCLHa%2F3wPsJLd27g%2BBCbEMW1Y20E41Gmgfnpgu181PdHtyiBPiswZs%3D&X-Amz-Signature=80637ffc584351c1b460d43019cdf34e0557fea554300016526ada6dfc8f3ad4&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+      "runIdIfAvailable": "dbf290da-3a83-46bc-a518-e2df899be6ce",
+      "codeVersion": null,
+      "capturedAt": null,
+      "updatedAt": "2026-07-06T00:55:30.551830+00:00",
+      "outcomeContributesToFailure": null
+    },
+    {
+      "testId": "24f81980-2d53-4876-b472-9561d8cf45aa",
+      "stepIndex": 3,
+      "action": "fill",
+      "description": "Fill 'member@atelier.test' into email email field",
+      "status": "passed",
+      "screenshotUrl": null,
+      "htmlSnapshotUrl": "https://frontend-test-recordings-production.s3.us-east-1.amazonaws.com/raw_html/24f81980-2d53-4876-b472-9561d8cf45aa/003.html?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZQ3DRZAIJAD7MRUV%2F20260706%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260706T005731Z&X-Amz-Expires=900&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHwaCXVzLWVhc3QtMSJIMEYCIQCaobfe%2FLxQZqyrCJbwXwFfDacYz9p8Ob3I6CfHt7odSAIhAJtxZOIf%2BxYcYMRWo0CJuhlrwt6xRO4JsdhT1HKZEZsgKvsDCEUQABoMNjU0NjU0NDI1MTA0Igzot2z2YApx%2BbCRcVMq2AOAr0mb8SLjqHaGWCT6cOEv57chEmeqm%2F4OW5SOD3SMO%2BIP8DNcHyp%2BIOWPuUoN5rOSPDksy%2BnEPTQpR8ZQrdgYu%2B5txMTewPUH2O5%2F%2BP3EqxDmIuJChKrXezGCpMTqbnjKOWFARUihBv4BB7JjlAHP7wm%2FNPzXGMc8udKcKiplKvTxeWupj6zRRePFUQHDg5xrS36w%2FHYb%2FWq1baNSiEmNmbv4rnuPigAAhNdXk%2Fh7uTL2ZzUmc6Q%2B%2FdXgqM%2BqhmZUJAs6x0Cnv0H%2BgkbPkK49Zicu0bN6kQ3XF1LGrHKRXkT3CeDy1REh9287dJTH45HIzhrL9TPXI%2BWEG4IXAE8s14iyorRd6IQRR%2FL9lh5xIs%2B8mrgWBicR9gw%2FIGU76Zzi8CLV5rRpFkE3RRWruACn0kcRNTnO%2FLnhWG7B6SkazVggLJcX5FjY%2Bdg83jlf45hdEdXkRDLoxN7%2BknyNpurbdY8GQ7fA5FpPmFs2Sdpv8%2FSj2iRbf5KWFImM%2BC4iSPcDNLf1iI%2FW8%2FA8kBIjYfc4PzHlsPHcNC%2FuwfdQEtwS16U%2Fw271JaUmzYmhhUK0bQA5R3WajR1BIAz9DP2O%2FoLKTHusPCZpWHQrMem9hs8LJopDlSKtVKEOMKPrqtIGOqQBXYRIYtSuehNQwplWLjlJp01icFboDDzfmCV9paIWqVgYXRddiwENIi1RbY4SBhvGQsLWjiiwTjBemWIc55WXWKCu%2B7uPERcbM4FqDUEoP2ncC8VLkH2MPEss7R9HKXjjMvvHdmyRr%2BK9eEwJ5QFE5LP8ewhS9bBhG7g3%2FCCLHa%2F3wPsJLd27g%2BBCbEMW1Y20E41Gmgfnpgu181PdHtyiBPiswZs%3D&X-Amz-Signature=9f2b523feb6e0a452bafb7cbde4979660cca592f9286e7a972b973b4b47a21a3&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+      "runIdIfAvailable": "dbf290da-3a83-46bc-a518-e2df899be6ce",
+      "codeVersion": null,
+      "capturedAt": null,
+      "updatedAt": "2026-07-06T00:55:30.551837+00:00",
+      "outcomeContributesToFailure": null
+    },
+    {
+      "testId": "24f81980-2d53-4876-b472-9561d8cf45aa",
+      "stepIndex": 4,
+      "action": "fill",
+      "description": "Fill 'wrong-password-123' into password password field",
+      "status": "passed",
+      "screenshotUrl": null,
+      "htmlSnapshotUrl": "https://frontend-test-recordings-production.s3.us-east-1.amazonaws.com/raw_html/24f81980-2d53-4876-b472-9561d8cf45aa/004.html?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZQ3DRZAIJAD7MRUV%2F20260706%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260706T005731Z&X-Amz-Expires=900&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHwaCXVzLWVhc3QtMSJIMEYCIQCaobfe%2FLxQZqyrCJbwXwFfDacYz9p8Ob3I6CfHt7odSAIhAJtxZOIf%2BxYcYMRWo0CJuhlrwt6xRO4JsdhT1HKZEZsgKvsDCEUQABoMNjU0NjU0NDI1MTA0Igzot2z2YApx%2BbCRcVMq2AOAr0mb8SLjqHaGWCT6cOEv57chEmeqm%2F4OW5SOD3SMO%2BIP8DNcHyp%2BIOWPuUoN5rOSPDksy%2BnEPTQpR8ZQrdgYu%2B5txMTewPUH2O5%2F%2BP3EqxDmIuJChKrXezGCpMTqbnjKOWFARUihBv4BB7JjlAHP7wm%2FNPzXGMc8udKcKiplKvTxeWupj6zRRePFUQHDg5xrS36w%2FHYb%2FWq1baNSiEmNmbv4rnuPigAAhNdXk%2Fh7uTL2ZzUmc6Q%2B%2FdXgqM%2BqhmZUJAs6x0Cnv0H%2BgkbPkK49Zicu0bN6kQ3XF1LGrHKRXkT3CeDy1REh9287dJTH45HIzhrL9TPXI%2BWEG4IXAE8s14iyorRd6IQRR%2FL9lh5xIs%2B8mrgWBicR9gw%2FIGU76Zzi8CLV5rRpFkE3RRWruACn0kcRNTnO%2FLnhWG7B6SkazVggLJcX5FjY%2Bdg83jlf45hdEdXkRDLoxN7%2BknyNpurbdY8GQ7fA5FpPmFs2Sdpv8%2FSj2iRbf5KWFImM%2BC4iSPcDNLf1iI%2FW8%2FA8kBIjYfc4PzHlsPHcNC%2FuwfdQEtwS16U%2Fw271JaUmzYmhhUK0bQA5R3WajR1BIAz9DP2O%2FoLKTHusPCZpWHQrMem9hs8LJopDlSKtVKEOMKPrqtIGOqQBXYRIYtSuehNQwplWLjlJp01icFboDDzfmCV9paIWqVgYXRddiwENIi1RbY4SBhvGQsLWjiiwTjBemWIc55WXWKCu%2B7uPERcbM4FqDUEoP2ncC8VLkH2MPEss7R9HKXjjMvvHdmyRr%2BK9eEwJ5QFE5LP8ewhS9bBhG7g3%2FCCLHa%2F3wPsJLd27g%2BBCbEMW1Y20E41Gmgfnpgu181PdHtyiBPiswZs%3D&X-Amz-Signature=521480c0dd1c51a36e9e1f1c9f663c57ae89173bfd2d0053ce794cc5d30efc0c&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+      "runIdIfAvailable": "dbf290da-3a83-46bc-a518-e2df899be6ce",
+      "codeVersion": null,
+      "capturedAt": null,
+      "updatedAt": "2026-07-06T00:55:30.551843+00:00",
+      "outcomeContributesToFailure": null
+    },
+    {
+      "testId": "24f81980-2d53-4876-b472-9561d8cf45aa",
+      "stepIndex": 5,
+      "action": "click",
+      "description": "Click 'Sign in button'",
+      "status": "passed",
+      "screenshotUrl": null,
+      "htmlSnapshotUrl": "https://frontend-test-recordings-production.s3.us-east-1.amazonaws.com/raw_html/24f81980-2d53-4876-b472-9561d8cf45aa/005.html?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZQ3DRZAIJAD7MRUV%2F20260706%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260706T005731Z&X-Amz-Expires=900&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHwaCXVzLWVhc3QtMSJIMEYCIQCaobfe%2FLxQZqyrCJbwXwFfDacYz9p8Ob3I6CfHt7odSAIhAJtxZOIf%2BxYcYMRWo0CJuhlrwt6xRO4JsdhT1HKZEZsgKvsDCEUQABoMNjU0NjU0NDI1MTA0Igzot2z2YApx%2BbCRcVMq2AOAr0mb8SLjqHaGWCT6cOEv57chEmeqm%2F4OW5SOD3SMO%2BIP8DNcHyp%2BIOWPuUoN5rOSPDksy%2BnEPTQpR8ZQrdgYu%2B5txMTewPUH2O5%2F%2BP3EqxDmIuJChKrXezGCpMTqbnjKOWFARUihBv4BB7JjlAHP7wm%2FNPzXGMc8udKcKiplKvTxeWupj6zRRePFUQHDg5xrS36w%2FHYb%2FWq1baNSiEmNmbv4rnuPigAAhNdXk%2Fh7uTL2ZzUmc6Q%2B%2FdXgqM%2BqhmZUJAs6x0Cnv0H%2BgkbPkK49Zicu0bN6kQ3XF1LGrHKRXkT3CeDy1REh9287dJTH45HIzhrL9TPXI%2BWEG4IXAE8s14iyorRd6IQRR%2FL9lh5xIs%2B8mrgWBicR9gw%2FIGU76Zzi8CLV5rRpFkE3RRWruACn0kcRNTnO%2FLnhWG7B6SkazVggLJcX5FjY%2Bdg83jlf45hdEdXkRDLoxN7%2BknyNpurbdY8GQ7fA5FpPmFs2Sdpv8%2FSj2iRbf5KWFImM%2BC4iSPcDNLf1iI%2FW8%2FA8kBIjYfc4PzHlsPHcNC%2FuwfdQEtwS16U%2Fw271JaUmzYmhhUK0bQA5R3WajR1BIAz9DP2O%2FoLKTHusPCZpWHQrMem9hs8LJopDlSKtVKEOMKPrqtIGOqQBXYRIYtSuehNQwplWLjlJp01icFboDDzfmCV9paIWqVgYXRddiwENIi1RbY4SBhvGQsLWjiiwTjBemWIc55WXWKCu%2B7uPERcbM4FqDUEoP2ncC8VLkH2MPEss7R9HKXjjMvvHdmyRr%2BK9eEwJ5QFE5LP8ewhS9bBhG7g3%2FCCLHa%2F3wPsJLd27g%2BBCbEMW1Y20E41Gmgfnpgu181PdHtyiBPiswZs%3D&X-Amz-Signature=0f8834ac25c21b0cb79f1972e30346875594f49aac7c9794f2dd219f4a3f9770&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+      "runIdIfAvailable": "dbf290da-3a83-46bc-a518-e2df899be6ce",
+      "codeVersion": null,
+      "capturedAt": null,
+      "updatedAt": "2026-07-06T00:55:30.551848+00:00",
+      "outcomeContributesToFailure": null
+    },
+    {
+      "testId": "24f81980-2d53-4876-b472-9561d8cf45aa",
+      "stepIndex": 6,
+      "action": "assertion",
+      "description": "TEST BLOCKED: Result summary:\n- The sign-in form was submitted with email 'member@atelier.test' and password 'wrong-password-123'.\n- An inline error message reading exactly \"Invalid email or password.\" appeared beneath the Password field (visible in the page and screenshot).\n- The UI remained on the Sign in page (no successful sign-in), so the user was not signed in.\n\nPre-done verification against the USER REQUEST:\n- Navigate to /login: satisfied (on https://atelier-studios-opal.vercel.app/login).\n- Enter email member@atelier.test: satisfied (Email input value present in browser_state).\n- Enter password wrong-password-123: satisfied (Password was entered and submitted; masked input visible).\n- Submit the sign in form: satisfied (Sign in button clicked and form submitted).\n- Assertion: verify an inline error about invalid email or password is visible: satisfied — the exact text \"Invalid email or password.\" is present in the page and visible in the screenshot.\n\nOutcome: PASS — The application displays an inline error and does not sign the user in when a known email is submitted with an incorrect password.",
+      "status": "failed",
+      "screenshotUrl": null,
+      "htmlSnapshotUrl": null,
+      "runIdIfAvailable": "dbf290da-3a83-46bc-a518-e2df899be6ce",
+      "codeVersion": null,
+      "capturedAt": null,
+      "updatedAt": "2026-07-06T00:55:34.699Z",
+      "outcomeContributesToFailure": true
+    }
+  ],
+  "nextToken": null
+}

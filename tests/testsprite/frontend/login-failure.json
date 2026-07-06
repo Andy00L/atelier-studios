@@ -1,0 +1,14 @@
+{
+  "projectId": "310cfc78-d7b7-4bc9-949b-6866c980735a",
+  "type": "frontend",
+  "name": "Signing in with a wrong password shows an error",
+  "description": "On the sign in page, submitting a known email with an incorrect password shows an inline error and does not sign the user in.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the sign in page at /login" },
+    { "type": "action", "description": "Enter the email member@atelier.test into the email field" },
+    { "type": "action", "description": "Enter the password wrong-password-123 into the password field" },
+    { "type": "action", "description": "Submit the sign in form" },
+    { "type": "assertion", "description": "Verify an error message about an invalid email or password is visible" }
+  ]
+}

@@ -1,0 +1,50 @@
+### 2026-07-06T01:00:36Z FE create+run: loop page
+warning: --plan-from supplies the test definition; ignoring --project, --type, --name. Edit the plan JSON to change these fields.
+idempotency-key: cli-create-plan-5c39dc2c-f97f-4533-ae63-8efff21f4158
+{
+  "testId": "acd6f292-5a83-40fa-a49b-77bac09c2d8a",
+  "type": "frontend",
+  "codeVersion": "v1",
+  "createdAt": "2026-07-06T01:00:38.485Z",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Navigate to the loop page at /loop"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify the page shows a numbered list of loop iterations describing tests that ran"
+    }
+  ],
+  "dashboardUrl": "https://www.testsprite.com/dashboard/tests/310cfc78-d7b7-4bc9-949b-6866c980735a/test/acd6f292-5a83-40fa-a49b-77bac09c2d8a",
+  "run": {
+    "runId": "9c508542-14c8-443d-86a7-3636098802fd",
+    "testId": "acd6f292-5a83-40fa-a49b-77bac09c2d8a",
+    "projectId": "310cfc78-d7b7-4bc9-949b-6866c980735a",
+    "userId": "e428b4a8-60f1-701f-4eb7-443f4980caf5",
+    "status": "blocked",
+    "source": "cli",
+    "createdAt": "2026-07-06T01:00:38.728Z",
+    "startedAt": "2026-07-06T01:00:39.128Z",
+    "finishedAt": "2026-07-06T01:01:42.724Z",
+    "codeVersion": "v1",
+    "targetUrl": "https://atelier-studios-opal.vercel.app",
+    "createdFrom": null,
+    "failedStepIndex": null,
+    "failureKind": null,
+    "videoUrl": "https://testsprite-videos.s3.us-east-1.amazonaws.com/e428b4a8-60f1-701f-4eb7-443f4980caf5/1783299702395693//tmp/a909fe11-7937-40a2-984a-1d36664fc90c/result.webm",
+    "error": "TEST BLOCKED: Result: PASS — The /loop page displays the agent-written build journal as a numbered list of loop iterations.\n\nFindings (observed in this session):\n- The page titled 'The loop' is visible at https://atelier-studios-opal.vercel.app/loop.\n- Multiple numbered entries are present and visible, starting with '01', '02', '03', etc., each containing a maker tag (e.g., '[maker: Claude Code]') and descriptive text about tests that ran, verdicts, and fixes (for example: health endpoint test, intentional-failure probe, auth lifecycle, booking lifecycle, authorization and validation, waitlist promotion).\n- No sign-in was required to view the loop entries.\n\nAll requested checks have been completed and verified visually from the page content and screenshot. The task is finished.",
+    "stepSummary": {
+      "total": 2,
+      "completed": 2,
+      "passedCount": 2,
+      "failedCount": 0
+    },
+    "dashboardUrl": "https://www.testsprite.com/dashboard/tests/310cfc78-d7b7-4bc9-949b-6866c980735a/test/acd6f292-5a83-40fa-a49b-77bac09c2d8a"
+  }
+}
+requestId: cli_b49b283c-883f-42c6-bac7-d8ae4c666ebb
+Run finished with status: blocked. Use 'testsprite test artifact get 9c508542-14c8-443d-86a7-3636098802fd' to download the failure bundle.
+{
+  "error": "Run 9c508542-14c8-443d-86a7-3636098802fd finished with status: blocked"
+}

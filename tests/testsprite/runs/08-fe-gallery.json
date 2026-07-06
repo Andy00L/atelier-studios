@@ -1,0 +1,46 @@
+### 2026-07-06T00:58:10Z FE create+run: gallery
+warning: --plan-from supplies the test definition; ignoring --project, --type, --name. Edit the plan JSON to change these fields.
+idempotency-key: cli-create-plan-b02375c1-74e7-4a79-b428-7437ba079091
+{
+  "testId": "c9a41561-2c1a-40a7-9e35-71fc280adc6b",
+  "type": "frontend",
+  "codeVersion": "v1",
+  "createdAt": "2026-07-06T00:58:10.694Z",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Navigate to the home page"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify the gallery shows at least three studios and each card displays a rate per hour"
+    }
+  ],
+  "dashboardUrl": "https://www.testsprite.com/dashboard/tests/310cfc78-d7b7-4bc9-949b-6866c980735a/test/c9a41561-2c1a-40a7-9e35-71fc280adc6b",
+  "run": {
+    "runId": "6a827b2f-ab07-47df-b64f-05b29b877661",
+    "testId": "c9a41561-2c1a-40a7-9e35-71fc280adc6b",
+    "projectId": "310cfc78-d7b7-4bc9-949b-6866c980735a",
+    "userId": "e428b4a8-60f1-701f-4eb7-443f4980caf5",
+    "status": "passed",
+    "source": "cli",
+    "createdAt": "2026-07-06T00:58:10.893Z",
+    "startedAt": "2026-07-06T00:58:14.642Z",
+    "finishedAt": "2026-07-06T00:59:43.188Z",
+    "codeVersion": "v1",
+    "targetUrl": "https://atelier-studios-opal.vercel.app",
+    "createdFrom": null,
+    "failedStepIndex": null,
+    "failureKind": null,
+    "videoUrl": "https://testsprite-videos.s3.us-east-1.amazonaws.com/e428b4a8-60f1-701f-4eb7-443f4980caf5/17832995829782//tmp/70861b34-1def-41b8-9858-8a84b903281d/result.webm",
+    "error": null,
+    "stepSummary": {
+      "total": 4,
+      "completed": 4,
+      "passedCount": 4,
+      "failedCount": 0
+    },
+    "dashboardUrl": "https://www.testsprite.com/dashboard/tests/310cfc78-d7b7-4bc9-949b-6866c980735a/test/c9a41561-2c1a-40a7-9e35-71fc280adc6b"
+  }
+}
+requestId: cli_43b768ea-d7f3-4f37-8a5a-43d4949f2baa

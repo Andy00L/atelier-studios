@@ -1,0 +1,11 @@
+{
+  "projectId": "310cfc78-d7b7-4bc9-949b-6866c980735a",
+  "type": "frontend",
+  "name": "The home gallery lists the studios with rates",
+  "description": "The landing page shows the studio gallery: several studios, each with a rate per hour and open hours.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the home page" },
+    { "type": "assertion", "description": "Verify the gallery shows at least three studios and each card displays a rate per hour" }
+  ]
+}

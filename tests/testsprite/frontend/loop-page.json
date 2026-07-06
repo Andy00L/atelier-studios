@@ -1,0 +1,11 @@
+{
+  "projectId": "310cfc78-d7b7-4bc9-949b-6866c980735a",
+  "type": "frontend",
+  "name": "The loop page shows the numbered build journal",
+  "description": "The /loop page renders the agent-written build journal as a numbered list of loop iterations.",
+  "priority": "p2",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the loop page at /loop" },
+    { "type": "assertion", "description": "Verify the page shows a numbered list of loop iterations describing tests that ran" }
+  ]
+}

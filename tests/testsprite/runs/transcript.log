@@ -138,3 +138,243 @@ idempotency-key: cli-create-a5cbd790-be77-4d1d-8f25-3d9e4e3a0810
   }
 }
 requestId: cli_b6a42a71-1879-4328-8afb-679054d39414
+### 2026-07-06T00:35:25Z FE create+run: booking wizard
+warning: --plan-from supplies the test definition; ignoring --project, --type, --name. Edit the plan JSON to change these fields.
+idempotency-key: cli-create-plan-181631d5-7404-4f7d-a165-7bf5332d1e3e
+{
+  "testId": "7f8c6313-a7b1-46c5-a2b4-4aa480b4c865",
+  "type": "frontend",
+  "codeVersion": "v1",
+  "createdAt": "2026-07-06T00:35:25.473Z",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Navigate to the home page"
+    },
+    {
+      "type": "action",
+      "description": "Open the sign in page from the header"
+    },
+    {
+      "type": "action",
+      "description": "Enter the email member@atelier.test into the email field"
+    },
+    {
+      "type": "action",
+      "description": "Enter the password MemberPass#2026 into the password field"
+    },
+    {
+      "type": "action",
+      "description": "Submit the sign in form"
+    },
+    {
+      "type": "action",
+      "description": "Open the studios gallery"
+    },
+    {
+      "type": "action",
+      "description": "Open the first studio in the gallery"
+    },
+    {
+      "type": "action",
+      "description": "Select an available time slot to place a hold"
+    },
+    {
+      "type": "action",
+      "description": "Confirm the booking"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify a booking confirmation is shown with a reference code that starts with ATL-"
+    }
+  ],
+  "dashboardUrl": "https://www.testsprite.com/dashboard/tests/310cfc78-d7b7-4bc9-949b-6866c980735a/test/7f8c6313-a7b1-46c5-a2b4-4aa480b4c865",
+  "run": {
+    "runId": "29d66253-8d76-405c-917f-acb5f2d186ee",
+    "testId": "7f8c6313-a7b1-46c5-a2b4-4aa480b4c865",
+    "projectId": "310cfc78-d7b7-4bc9-949b-6866c980735a",
+    "userId": "e428b4a8-60f1-701f-4eb7-443f4980caf5",
+    "status": "blocked",
+    "source": "cli",
+    "createdAt": "2026-07-06T00:35:25.618Z",
+    "startedAt": "2026-07-06T00:35:29.676Z",
+    "finishedAt": "2026-07-06T00:40:30.910Z",
+    "codeVersion": "v1",
+    "targetUrl": "https://atelier-studios-opal.vercel.app",
+    "createdFrom": null,
+    "failedStepIndex": null,
+    "failureKind": null,
+    "videoUrl": "https://testsprite-videos.s3.us-east-1.amazonaws.com/e428b4a8-60f1-701f-4eb7-443f4980caf5/1783298430585258//tmp/ada3f9b2-dcf0-4d3b-a9b7-8468579ed4aa/result.webm",
+    "error": "TEST BLOCKED: PASS: Booking flow completed and booking confirmation verified.\n\nObservations (directly from UI during this session):\n- The booking confirmation panel is visible with heading: \"Booking confirmed\".\n- The booking is for Aurora Photo Studio: Mon, Jul 6, 08:00-09:00 UTC.\n- The Reference shown on the page is: ATL-7AP495 (starts with \"ATL-\").\n- The Total shown is: $80.\n\nResult: The requested booking flow completed successfully and the booking confirmation contains a reference code that starts with \"ATL-\".\n",
+    "stepSummary": {
+      "total": 9,
+      "completed": 9,
+      "passedCount": 9,
+      "failedCount": 0
+    },
+    "dashboardUrl": "https://www.testsprite.com/dashboard/tests/310cfc78-d7b7-4bc9-949b-6866c980735a/test/7f8c6313-a7b1-46c5-a2b4-4aa480b4c865"
+  }
+}
+requestId: cli_e4bd7804-8ed2-4c66-a5c8-3f5b663f4c1a
+Run finished with status: blocked. Use 'testsprite test artifact get 29d66253-8d76-405c-917f-acb5f2d186ee' to download the failure bundle.
+{
+  "error": "Run 29d66253-8d76-405c-917f-acb5f2d186ee finished with status: blocked"
+}
+### 2026-07-06T00:53:52Z FE create+run: login failure
+warning: --plan-from supplies the test definition; ignoring --project, --type, --name. Edit the plan JSON to change these fields.
+idempotency-key: cli-create-plan-ee56b3c2-cd2f-4fc5-9398-6fa6dafa38f9
+{
+  "testId": "24f81980-2d53-4876-b472-9561d8cf45aa",
+  "type": "frontend",
+  "codeVersion": "v1",
+  "createdAt": "2026-07-06T00:53:52.416Z",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Navigate to the sign in page at /login"
+    },
+    {
+      "type": "action",
+      "description": "Enter the email member@atelier.test into the email field"
+    },
+    {
+      "type": "action",
+      "description": "Enter the password wrong-password-123 into the password field"
+    },
+    {
+      "type": "action",
+      "description": "Submit the sign in form"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify an error message about an invalid email or password is visible"
+    }
+  ],
+  "dashboardUrl": "https://www.testsprite.com/dashboard/tests/310cfc78-d7b7-4bc9-949b-6866c980735a/test/24f81980-2d53-4876-b472-9561d8cf45aa",
+  "run": {
+    "runId": "dbf290da-3a83-46bc-a518-e2df899be6ce",
+    "testId": "24f81980-2d53-4876-b472-9561d8cf45aa",
+    "projectId": "310cfc78-d7b7-4bc9-949b-6866c980735a",
+    "userId": "e428b4a8-60f1-701f-4eb7-443f4980caf5",
+    "status": "blocked",
+    "source": "cli",
+    "createdAt": "2026-07-06T00:53:52.536Z",
+    "startedAt": "2026-07-06T00:53:52.841Z",
+    "finishedAt": "2026-07-06T00:55:34.715Z",
+    "codeVersion": "v1",
+    "targetUrl": "https://atelier-studios-opal.vercel.app",
+    "createdFrom": null,
+    "failedStepIndex": null,
+    "failureKind": null,
+    "videoUrl": "https://testsprite-videos.s3.us-east-1.amazonaws.com/e428b4a8-60f1-701f-4eb7-443f4980caf5/178329933447417//tmp/9cbb87a6-a62b-4a1f-815d-b2f08e002e16/result.webm",
+    "error": "TEST BLOCKED: Result summary:\n- The sign-in form was submitted with email 'member@atelier.test' and password 'wrong-password-123'.\n- An inline error message reading exactly \"Invalid email or password.\" appeared beneath the Password field (visible in the page and screenshot).\n- The UI remained on the Sign in page (no successful sign-in), so the user was not signed in.\n\nPre-done verification against the USER REQUEST:\n- Navigate to /login: satisfied (on https://atelier-studios-opal.vercel.app/login).\n- Enter email member@atelier.test: satisfied (Email input value present in browser_state).\n- Enter password wrong-password-123: satisfied (Password was entered and submitted; masked input visible).\n- Submit the sign in form: satisfied (Sign in button clicked and form submitted).\n- Assertion: verify an inline error about invalid email or password is visible: satisfied — the exact text \"Invalid email or password.\" is present in the page and visible in the screenshot.\n\nOutcome: PASS — The application displays an inline error and does not sign the user in when a known email is submitted with an incorrect password.\n",
+    "stepSummary": {
+      "total": 5,
+      "completed": 5,
+      "passedCount": 5,
+      "failedCount": 0
+    },
+    "dashboardUrl": "https://www.testsprite.com/dashboard/tests/310cfc78-d7b7-4bc9-949b-6866c980735a/test/24f81980-2d53-4876-b472-9561d8cf45aa"
+  }
+}
+requestId: cli_a3974167-8338-4ca0-8ab6-8c5c0c67b802
+Run finished with status: blocked. Use 'testsprite test artifact get dbf290da-3a83-46bc-a518-e2df899be6ce' to download the failure bundle.
+{
+  "error": "Run dbf290da-3a83-46bc-a518-e2df899be6ce finished with status: blocked"
+}
+### 2026-07-06T00:58:10Z FE create+run: gallery
+warning: --plan-from supplies the test definition; ignoring --project, --type, --name. Edit the plan JSON to change these fields.
+idempotency-key: cli-create-plan-b02375c1-74e7-4a79-b428-7437ba079091
+{
+  "testId": "c9a41561-2c1a-40a7-9e35-71fc280adc6b",
+  "type": "frontend",
+  "codeVersion": "v1",
+  "createdAt": "2026-07-06T00:58:10.694Z",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Navigate to the home page"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify the gallery shows at least three studios and each card displays a rate per hour"
+    }
+  ],
+  "dashboardUrl": "https://www.testsprite.com/dashboard/tests/310cfc78-d7b7-4bc9-949b-6866c980735a/test/c9a41561-2c1a-40a7-9e35-71fc280adc6b",
+  "run": {
+    "runId": "6a827b2f-ab07-47df-b64f-05b29b877661",
+    "testId": "c9a41561-2c1a-40a7-9e35-71fc280adc6b",
+    "projectId": "310cfc78-d7b7-4bc9-949b-6866c980735a",
+    "userId": "e428b4a8-60f1-701f-4eb7-443f4980caf5",
+    "status": "passed",
+    "source": "cli",
+    "createdAt": "2026-07-06T00:58:10.893Z",
+    "startedAt": "2026-07-06T00:58:14.642Z",
+    "finishedAt": "2026-07-06T00:59:43.188Z",
+    "codeVersion": "v1",
+    "targetUrl": "https://atelier-studios-opal.vercel.app",
+    "createdFrom": null,
+    "failedStepIndex": null,
+    "failureKind": null,
+    "videoUrl": "https://testsprite-videos.s3.us-east-1.amazonaws.com/e428b4a8-60f1-701f-4eb7-443f4980caf5/17832995829782//tmp/70861b34-1def-41b8-9858-8a84b903281d/result.webm",
+    "error": null,
+    "stepSummary": {
+      "total": 4,
+      "completed": 4,
+      "passedCount": 4,
+      "failedCount": 0
+    },
+    "dashboardUrl": "https://www.testsprite.com/dashboard/tests/310cfc78-d7b7-4bc9-949b-6866c980735a/test/c9a41561-2c1a-40a7-9e35-71fc280adc6b"
+  }
+}
+requestId: cli_43b768ea-d7f3-4f37-8a5a-43d4949f2baa
+### 2026-07-06T01:00:36Z FE create+run: loop page
+warning: --plan-from supplies the test definition; ignoring --project, --type, --name. Edit the plan JSON to change these fields.
+idempotency-key: cli-create-plan-5c39dc2c-f97f-4533-ae63-8efff21f4158
+{
+  "testId": "acd6f292-5a83-40fa-a49b-77bac09c2d8a",
+  "type": "frontend",
+  "codeVersion": "v1",
+  "createdAt": "2026-07-06T01:00:38.485Z",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Navigate to the loop page at /loop"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify the page shows a numbered list of loop iterations describing tests that ran"
+    }
+  ],
+  "dashboardUrl": "https://www.testsprite.com/dashboard/tests/310cfc78-d7b7-4bc9-949b-6866c980735a/test/acd6f292-5a83-40fa-a49b-77bac09c2d8a",
+  "run": {
+    "runId": "9c508542-14c8-443d-86a7-3636098802fd",
+    "testId": "acd6f292-5a83-40fa-a49b-77bac09c2d8a",
+    "projectId": "310cfc78-d7b7-4bc9-949b-6866c980735a",
+    "userId": "e428b4a8-60f1-701f-4eb7-443f4980caf5",
+    "status": "blocked",
+    "source": "cli",
+    "createdAt": "2026-07-06T01:00:38.728Z",
+    "startedAt": "2026-07-06T01:00:39.128Z",
+    "finishedAt": "2026-07-06T01:01:42.724Z",
+    "codeVersion": "v1",
+    "targetUrl": "https://atelier-studios-opal.vercel.app",
+    "createdFrom": null,
+    "failedStepIndex": null,
+    "failureKind": null,
+    "videoUrl": "https://testsprite-videos.s3.us-east-1.amazonaws.com/e428b4a8-60f1-701f-4eb7-443f4980caf5/1783299702395693//tmp/a909fe11-7937-40a2-984a-1d36664fc90c/result.webm",
+    "error": "TEST BLOCKED: Result: PASS — The /loop page displays the agent-written build journal as a numbered list of loop iterations.\n\nFindings (observed in this session):\n- The page titled 'The loop' is visible at https://atelier-studios-opal.vercel.app/loop.\n- Multiple numbered entries are present and visible, starting with '01', '02', '03', etc., each containing a maker tag (e.g., '[maker: Claude Code]') and descriptive text about tests that ran, verdicts, and fixes (for example: health endpoint test, intentional-failure probe, auth lifecycle, booking lifecycle, authorization and validation, waitlist promotion).\n- No sign-in was required to view the loop entries.\n\nAll requested checks have been completed and verified visually from the page content and screenshot. The task is finished.",
+    "stepSummary": {
+      "total": 2,
+      "completed": 2,
+      "passedCount": 2,
+      "failedCount": 0
+    },
+    "dashboardUrl": "https://www.testsprite.com/dashboard/tests/310cfc78-d7b7-4bc9-949b-6866c980735a/test/acd6f292-5a83-40fa-a49b-77bac09c2d8a"
+  }
+}
+requestId: cli_b49b283c-883f-42c6-bac7-d8ae4c666ebb
+Run finished with status: blocked. Use 'testsprite test artifact get 9c508542-14c8-443d-86a7-3636098802fd' to download the failure bundle.
+{
+  "error": "Run 9c508542-14c8-443d-86a7-3636098802fd finished with status: blocked"
+}

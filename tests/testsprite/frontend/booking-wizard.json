@@ -1,0 +1,19 @@
+{
+  "projectId": "310cfc78-d7b7-4bc9-949b-6866c980735a",
+  "type": "frontend",
+  "name": "Booking a studio reaches a sealed confirmation with a reference",
+  "description": "A signed-in member opens a studio, holds an available slot, confirms it, and sees a booking confirmation showing a reference code that starts with ATL-.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the home page" },
+    { "type": "action", "description": "Open the sign in page from the header" },
+    { "type": "action", "description": "Enter the email member@atelier.test into the email field" },
+    { "type": "action", "description": "Enter the password MemberPass#2026 into the password field" },
+    { "type": "action", "description": "Submit the sign in form" },
+    { "type": "action", "description": "Open the studios gallery" },
+    { "type": "action", "description": "Open the first studio in the gallery" },
+    { "type": "action", "description": "Select the first open time slot to place a hold" },
+    { "type": "action", "description": "Confirm the booking on the review panel" },
+    { "type": "assertion", "description": "Verify the text 'Booking confirmed' and a reference code starting with 'ATL-' are both visible" }
+  ]
+}
