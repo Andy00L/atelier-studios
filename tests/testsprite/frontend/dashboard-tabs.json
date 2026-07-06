@@ -1,0 +1,17 @@
+{
+  "projectId": "310cfc78-d7b7-4bc9-949b-6866c980735a",
+  "type": "frontend",
+  "name": "The dashboard shows a stats summary and switches between tabs",
+  "description": "A signed-in member sees a stats summary on the dashboard and can switch from the Bookings tab to the Waitlist tab.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the home page" },
+    { "type": "action", "description": "Open the sign in page from the header" },
+    { "type": "action", "description": "Enter the email member@atelier.test into the email field" },
+    { "type": "action", "description": "Enter the password MemberPass#2026 into the password field" },
+    { "type": "action", "description": "Submit the sign in form" },
+    { "type": "assertion", "description": "Verify the dashboard shows a stats summary with Bookings, Hours booked, and Total spend" },
+    { "type": "action", "description": "Click the Waitlist tab" },
+    { "type": "assertion", "description": "Verify the Waitlist section is shown, listing waitlist entries with a position or the message that the member is on no waitlists" }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "projectId": "310cfc78-d7b7-4bc9-949b-6866c980735a",
+  "type": "frontend",
+  "name": "The gallery search and discipline filter narrow the studio list",
+  "description": "On the home gallery, searching and using a discipline filter change which studios are listed and the result count updates.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the home page" },
+    { "type": "assertion", "description": "Verify the studio count near the sort control shows three studios and three studio cards are listed" },
+    { "type": "action", "description": "Type the word podcast into the studio search field" },
+    { "type": "assertion", "description": "Verify only one studio card, 'Signal Podcast Booth', remains listed and the count shows one studio" },
+    { "type": "action", "description": "Clear the studio search field" },
+    { "type": "action", "description": "Click the 'Music' discipline filter chip" },
+    { "type": "assertion", "description": "Verify only 'Resonance Music Room' remains listed" }
+  ]
+}

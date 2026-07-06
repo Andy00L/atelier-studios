@@ -1,0 +1,17 @@
+{
+  "projectId": "310cfc78-d7b7-4bc9-949b-6866c980735a",
+  "type": "frontend",
+  "name": "The studio look-inside gallery opens a lightbox and navigates",
+  "description": "On a studio detail page, clicking a look-inside tile opens a lightbox that shows a caption and position and can move to the next image and close.",
+  "priority": "p2",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the home page" },
+    { "type": "action", "description": "Open the Signal Podcast Booth studio from the gallery" },
+    { "type": "action", "description": "Scroll to the 'Look inside' section and click the first gallery tile" },
+    { "type": "assertion", "description": "Verify a lightbox opens showing a caption such as 'Broadcast desk' and a position like '1 / 4'" },
+    { "type": "action", "description": "Click the next arrow inside the lightbox" },
+    { "type": "assertion", "description": "Verify the lightbox caption changes to the next tile (for example 'Isolation')" },
+    { "type": "action", "description": "Close the lightbox using its close button" },
+    { "type": "assertion", "description": "Verify the lightbox is no longer visible and the studio page is shown again" }
+  ]
+}
