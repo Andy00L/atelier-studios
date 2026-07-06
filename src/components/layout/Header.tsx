@@ -1,6 +1,7 @@
 "use client";
 
-// Global header: brand, primary nav, and auth state. sourceRef: docs/UI_DESIGN_SYSTEM.md.
+// Global header: brand, primary nav, and auth state. Neutral near-black system.
+// sourceRef: docs/UI_DESIGN_SYSTEM.md.
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -16,9 +17,13 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-20 border-b border-hairline bg-field/85 backdrop-blur-md">
+    <header className="sticky top-0 z-20 border-b border-line bg-field/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <Link href="/" className="font-display text-xl font-semibold tracking-tight text-ink" data-testid="brand-home">
+        <Link
+          href="/"
+          className="font-display text-xl font-semibold tracking-tight text-ink"
+          data-testid="brand-home"
+        >
           Atelier
         </Link>
         <nav className="flex items-center gap-1 text-sm">
@@ -60,11 +65,7 @@ export function Header() {
               </button>
             </>
           ) : (
-            <Link
-              href="/login"
-              className="ml-1 rounded-md bg-accent px-4 py-2 font-medium text-field transition-transform hover:brightness-110 active:scale-[0.98]"
-              data-testid="nav-login"
-            >
+            <Link href="/login" className="atl-btn atl-btn-primary ml-1 h-10 px-5" data-testid="nav-login">
               Sign in
             </Link>
           )}

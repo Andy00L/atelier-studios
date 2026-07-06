@@ -36,3 +36,19 @@ export function formatOpenHours(openHour: number, closeHour: number): string {
   const pad = (hour: number) => `${hour.toString().padStart(2, "0")}:00`;
   return `${pad(openHour)}-${pad(closeHour)} UTC`;
 }
+
+const MONTH_DAY_FORMAT = new Intl.DateTimeFormat("en-US", {
+  month: "short",
+  day: "numeric",
+  timeZone: "UTC",
+});
+
+// Short window label, e.g. "Jul 6". UTC to match the API's slot grid.
+export function formatMonthDay(timestampMs: number): string {
+  return MONTH_DAY_FORMAT.format(new Date(timestampMs));
+}
+
+// The slot range without the trailing " UTC" (used inside the light-board tiles).
+export function formatSlotClock(startTs: number, endTs: number): string {
+  return formatSlotRange(startTs, endTs).replace(" UTC", "");
+}

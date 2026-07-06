@@ -36,6 +36,8 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="min-h-full">
+        {/* Finishing: the fixed film-grain layer sits above the field, below content. */}
+        <div className="atl-grain" aria-hidden="true" />
         <div id="app-root" className="flex min-h-screen flex-col">
           <AuthProvider>
             <Header />

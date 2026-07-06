@@ -1,167 +1,495 @@
 @import "tailwindcss";
 
-/* Atelier design tokens. sourceRef: docs/UI_DESIGN_SYSTEM.md. Single warm dark
-   theme; components read these, never literals. */
+/* Atelier design tokens. sourceRef: docs/UI_DESIGN_SYSTEM.md, and the accepted
+   Claude Design exports (neutral near-black canvas, one bone accent, one ivory
+   pass). Components read these variables, never literals. */
 :root {
   color-scheme: dark;
 
-  --field: #15120d;
-  --surface: #1e1a13;
-  --surface-raised: #26211a;
-  --ink: #f4efe4;
-  --muted: #b0a692;
-  --faint: #7a7060;
-  --accent: #caa04a;
-  --accent-soft: #2a2416;
-  --accent-deep: #7d631f;
-  --seal: #7fa06e;
-  --destructive: #c85a44;
-  --hairline: rgba(244, 239, 228, 0.09);
-  --hairline-strong: rgba(244, 239, 228, 0.16);
+  --field: #0a0a0b;
+  --surface: #161617;
+  --surface-raised: #202023;
+  --surface-sunken: #0e0e0f;
+  --ink: #f5f5f6;
+  --muted: #a6a6ac;
+  --faint: #6c6c72;
+  --line: rgba(255, 255, 255, 0.08);
+  --line-strong: rgba(255, 255, 255, 0.14);
+  --accent: #ece6d8;
+  --accent-dim: #cfc7b5;
+  --accent-soft: rgba(236, 230, 216, 0.1);
+  --ivory: #efe9dc;
+  --confirm: #74c39a;
+  --destructive: #e5674f;
 
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
 
-  /* Warm layered shadow stack, one top light source. */
-  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4), 0 12px 28px rgba(0, 0, 0, 0.34),
-    0 24px 60px rgba(0, 0, 0, 0.28);
+  /* One top light source; higher elevation is softer, larger, lower opacity. */
+  --shadow-card: inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 2px 4px rgba(0, 0, 0, 0.6), 0 12px 26px rgba(0, 0, 0, 0.5),
+    0 30px 64px rgba(0, 0, 0, 0.42);
+  --shadow-card-hover: inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 4px 8px rgba(0, 0, 0, 0.6), 0 18px 38px rgba(0, 0, 0, 0.52),
+    0 44px 84px rgba(0, 0, 0, 0.46);
 
   --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-enter: cubic-bezier(0, 0, 0.2, 1);
+  --ease-enter: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-exit: cubic-bezier(0.4, 0, 1, 1);
 }
 
-/* Expose tokens to Tailwind utilities (bg-field, text-ink, border-hairline...). */
+/* Expose tokens to Tailwind utilities (bg-surface, text-ink, border-line...). */
 @theme inline {
   --color-field: var(--field);
   --color-surface: var(--surface);
   --color-surface-raised: var(--surface-raised);
+  --color-surface-sunken: var(--surface-sunken);
   --color-ink: var(--ink);
   --color-muted: var(--muted);
   --color-faint: var(--faint);
   --color-accent: var(--accent);
-  --color-accent-soft: var(--accent-soft);
-  --color-accent-deep: var(--accent-deep);
-  --color-seal: var(--seal);
+  --color-accent-dim: var(--accent-dim);
+  --color-ivory: var(--ivory);
+  --color-confirm: var(--confirm);
   --color-destructive: var(--destructive);
-  --color-hairline: var(--hairline);
-  --color-hairline-strong: var(--hairline-strong);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
 
   --font-display: var(--font-fraunces);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
   background-color: var(--field);
   color: var(--ink);
   font-family: var(--font-sans), system-ui, sans-serif;
-  /* Warm radial vignette: feathered, never a hard edge. */
+  /* Neutral key light from the top, feathered, never a hard edge. */
   background-image: radial-gradient(
-    120% 90% at 50% -10%,
-    rgba(202, 160, 74, 0.06),
-    transparent 60%
+    120% 80% at 50% -12%,
+    rgba(255, 255, 255, 0.055),
+    transparent 55%
   );
   background-attachment: fixed;
+  overflow-x: hidden;
 }
 
-/* Faint animated film grain (~4%), stepped so it reads as film not a dirty screen. */
-body::before {
+/* Finishing: faint animated film grain above the field, below the content. */
+.atl-grain {
   content: "";
   position: fixed;
   inset: -50%;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.04;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  animation: grain-shift 0.6s steps(2) infinite;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: atl-grain 0.6s steps(2) infinite;
 }
 
-@keyframes grain-shift {
-  0% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(-6px, 4px);
-  }
-  100% {
-    transform: translate(4px, -5px);
-  }
-}
-
-/* App content sits above the grain layer. */
 #app-root {
   position: relative;
   z-index: 1;
 }
 
-/* The material: a warm lit card with a hairline top edge and the shadow stack. */
-.card {
-  background-color: var(--surface);
-  border: 1px solid var(--hairline);
+/* The material: a lit warm surface with a hairline top edge and the shadow stack. */
+.atl-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
-  box-shadow:
-    inset 0 1px 0 rgba(244, 239, 228, 0.06),
-    var(--shadow-card);
+}
+
+/* Inset well: recessed surface for inputs and the availability grid. */
+.atl-well {
+  background: var(--surface-sunken);
+  border-radius: var(--radius-md);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.7),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 
 /* Placard: the gallery-wall label. A hairline top rule, eyebrow left, value right. */
-.placard {
+.atl-placard {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 1rem;
-  padding-top: 0.625rem;
-  border-top: 1px solid var(--hairline);
+  gap: 16px;
+  padding: 13px 0;
+  border-top: 1px solid var(--line);
 }
-
-.eyebrow {
+.atl-eyebrow {
   font-family: var(--font-mono), monospace;
-  font-size: 0.6875rem;
-  letter-spacing: 0.14em;
+  font-size: 11px;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--faint);
 }
+.atl-val {
+  font-variant-numeric: tabular-nums;
+  font-size: 15px;
+  color: var(--ink);
+}
+.atl-val-mono {
+  font-family: var(--font-mono), monospace;
+  font-size: 14px;
+  color: var(--ink);
+}
+.atl-num {
+  font-variant-numeric: tabular-nums;
+}
 
-/* Brass seal: the confirmation stamp holding the booking reference. Once per screen. */
-.seal {
+/* Inputs: the well-styled field with the designed focus ring. */
+.atl-input {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  border-radius: var(--radius-md);
+  background: var(--surface-sunken);
+  border: 1px solid var(--line);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.7),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+  color: var(--ink);
+  font-family: var(--font-sans), sans-serif;
+  font-size: 14px;
+  transition: border-color 0.18s;
+}
+.atl-input::placeholder {
+  color: var(--faint);
+}
+.atl-input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-color: var(--line-strong);
+}
+.atl-label {
+  display: block;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+/* Buttons. Primary is the bone pill (the Wealthsimple white-pill move). */
+.atl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 46px;
+  padding: 0 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.18s var(--ease-standard), box-shadow 0.18s,
+    background 0.18s, border-color 0.18s;
+}
+.atl-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.atl-btn-primary {
+  background: linear-gradient(180deg, var(--ivory), var(--accent));
+  color: #0a0a0b;
+  font-weight: 600;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+.atl-btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 12px 26px rgba(0, 0, 0, 0.5);
+}
+.atl-btn-primary:active:not(:disabled) {
+  transform: scale(0.98);
+}
+.atl-btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line-strong);
+}
+.atl-btn-ghost:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.04);
+}
+.atl-btn-ghost:active:not(:disabled) {
+  transform: scale(0.98);
+}
+.atl-btn-destructive {
+  background: transparent;
+  color: var(--destructive);
+  border-color: var(--line);
+}
+.atl-btn-destructive:hover:not(:disabled) {
+  background: rgba(229, 103, 79, 0.08);
+  border-color: rgba(229, 103, 79, 0.4);
+}
+.atl-btn-destructive:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+/* Nav pill (Earlier / Later). */
+.atl-navbtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-sans), sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.18s, background 0.18s, border-color 0.18s;
+}
+.atl-navbtn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+.atl-navbtn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* Availability light board tiles. */
+.atl-tile {
+  position: relative;
+  font-family: var(--font-mono), monospace;
+  font-size: 12.5px;
+  min-height: 44px;
+  min-width: 92px;
+  padding: 0 12px;
+  border-radius: 10px;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 8.5rem;
-  height: 8.5rem;
-  border-radius: 999px;
-  color: var(--field);
-  background: radial-gradient(circle at 35% 30%, #e3c072, var(--accent) 45%, var(--accent-deep));
-  box-shadow:
-    inset 0 2px 6px rgba(255, 255, 255, 0.45),
-    inset 0 -6px 14px rgba(0, 0, 0, 0.35),
-    0 10px 24px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  gap: 2px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: transform 0.2s var(--ease-standard), background 0.2s,
+    border-color 0.2s, box-shadow 0.2s;
+}
+.atl-tile.is-free {
+  border-color: rgba(236, 230, 216, 0.4);
+  color: var(--ink);
+  background-image: linear-gradient(
+    180deg,
+    rgba(236, 230, 216, 0.07),
+    rgba(236, 230, 216, 0.02)
+  );
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    inset 0 0 12px rgba(236, 230, 216, 0.05);
+}
+.atl-tile.is-free:hover {
+  transform: translateY(-2px);
+  background-image: linear-gradient(
+    180deg,
+    rgba(236, 230, 216, 0.14),
+    rgba(236, 230, 216, 0.06)
+  );
+  border-color: rgba(236, 230, 216, 0.6);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 8px 18px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(236, 230, 216, 0.14);
+}
+.atl-tile.is-booked {
+  color: var(--faint);
+  border-color: var(--line);
+}
+.atl-tile.is-booked:hover {
+  transform: translateY(-2px);
+  border-color: var(--line-strong);
+  color: var(--muted);
+}
+.atl-tile.is-blackout,
+.atl-tile.is-held {
+  color: var(--faint);
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 4px,
+    rgba(255, 255, 255, 0.05) 4px,
+    rgba(255, 255, 255, 0.05) 5px
+  );
+}
+.atl-tile.is-selected {
+  border-color: var(--accent);
+  color: var(--ink);
+  background: var(--accent-soft);
+  box-shadow: 0 0 0 1px var(--accent), inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 0 18px rgba(236, 230, 216, 0.12);
+}
+.atl-tile.is-selected:hover {
+  transform: translateY(-2px);
 }
 
-/* One designed focus treatment, visible on field and material. */
+/* The ivory pass (the hero object): a studio ticket in real light. */
+.atl-pass {
+  position: relative;
+  width: 320px;
+  max-width: 100%;
+  padding: 22px 24px 20px 46px;
+  background: var(--ivory);
+  color: #211d17;
+  border-radius: var(--radius-md);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75), 0 1px 0 rgba(0, 0, 0, 0.5),
+    0 24px 50px rgba(0, 0, 0, 0.62);
+  overflow: hidden;
+  text-align: left;
+}
+.atl-pass-perf {
+  position: absolute;
+  left: 16px;
+  top: 14px;
+  bottom: 14px;
+  width: 6px;
+  background: radial-gradient(circle at 3px 6.5px, var(--field) 2.6px, transparent 3px);
+  background-size: 6px 13px;
+}
+.atl-pass-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)' opacity='0.6'/%3E%3C/svg%3E");
+}
+.atl-pass-sweep {
+  position: absolute;
+  top: -25%;
+  left: 0;
+  width: 46%;
+  height: 150%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  transform: translateX(-140%) skewX(-12deg);
+  animation: atl-sweep 1.15s var(--ease-standard) 0.5s 1 both;
+}
+.atl-pass-mono-a {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display), serif;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 1;
+  color: #d8cdb5;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8), 0 -1px 1px rgba(0, 0, 0, 0.18);
+}
+
+/* Studio gallery card: lifts and brightens its "View and book" affordance on hover. */
+.atl-studio-card {
+  transition: transform 0.22s var(--ease-standard), border-color 0.22s, box-shadow 0.22s;
+}
+.atl-studio-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-card-hover);
+}
+.atl-vb {
+  color: var(--accent);
+  transition: color 0.2s;
+}
+.atl-vb-arrow {
+  transition: transform 0.22s var(--ease-standard);
+}
+.atl-studio-card:hover .atl-vb {
+  color: var(--ivory);
+}
+.atl-studio-card:hover .atl-vb-arrow {
+  transform: translateX(3px);
+}
+
+/* Skeleton shimmer. */
+.atl-skel {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.04) 25%,
+    rgba(255, 255, 255, 0.09) 37%,
+    rgba(255, 255, 255, 0.04) 63%
+  );
+  background-size: 260% 100%;
+  animation: atl-shimmer 1.4s linear infinite;
+}
+
+/* One designed focus treatment, visible on the field and the material. */
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
   border-radius: 4px;
 }
 
+@keyframes atl-grain {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-6px, 4px); }
+  100% { transform: translate(4px, -5px); }
+}
+@keyframes atl-panelIn {
+  from { opacity: 0; transform: translateY(9px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes atl-rowIn {
+  from { opacity: 0; transform: translateY(7px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes atl-cardIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes atl-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes atl-passSettle {
+  0% { opacity: 0; transform: translateY(13px) rotate(2deg) scale(0.985); }
+  55% { opacity: 1; }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes atl-sweep {
+  0% { transform: translateX(-140%) skewX(-12deg); }
+  100% { transform: translateX(150%) skewX(-12deg); }
+}
+@keyframes atl-tick {
+  0% { opacity: 0; transform: scale(0.4); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes atl-glow {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 0.9; }
+}
+@keyframes atl-shimmer {
+  0% { background-position: 120% 0; }
+  100% { background-position: -120% 0; }
+}
+@keyframes atl-spin {
+  to { transform: rotate(360deg); }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  body::before {
+  .atl-grain {
     animation: none;
   }
   *,
   *::before,
   *::after {
     animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
   }
 }
