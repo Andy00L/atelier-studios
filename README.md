@@ -23,9 +23,9 @@ Live: **https://atelier-studios-opal.vercel.app** &nbsp;|&nbsp; The loop journal
 
 ![Atelier studio gallery](docs/screenshots/01-gallery.jpg)
 
-| Booking confirmed (sealed reference) | Your dashboard |
+| Booking confirmed (the ivory pass) | Your dashboard |
 | --- | --- |
-| ![Booking confirmation with a brass seal](docs/screenshots/03-confirmation.jpg) | ![Member dashboard](docs/screenshots/05-dashboard.jpg) |
+| ![Booking confirmation with the ivory booking pass](docs/screenshots/03-confirmation.jpg) | ![Member dashboard](docs/screenshots/05-dashboard.jpg) |
 
 ## 🎯 The problem
 
@@ -112,13 +112,16 @@ use a real cloud browser.
 | admin studio crud | backend | admin create/update/soft-delete, member 403 | passed |
 | blackout cancels booking | backend | blackout wins over an existing booking | passed |
 | hold ownership edges | backend | foreign confirm 403, unknown hold 404 | passed |
+| availability respects the horizon | backend | no `free` slot beyond the 30-day horizon; `422 BEYOND_HORIZON` | passed |
 | home gallery lists studios | frontend | the gallery renders with rates | passed |
+| creating an account reaches the dashboard | frontend | register, then land on the dashboard | passed |
+| admin console with studios and blackout | frontend | admin reaches the operations console | passed |
 | booking wizard to confirmation | frontend | full sign-in, hold, confirm flow | verified on video (see honesty) |
 | wrong password shows an error | frontend | the login failure path | verified on video (see honesty) |
 
 ## 🔁 The loop caught real issues
 
-The loop is only worth its points if it catches things. Two concrete examples, both
+The loop is only worth its points if it catches things. Three concrete examples, each
 in `LOOP.md` with matching platform runs and commits:
 
 - **The tests were not actually running.** The first backend tests reported
@@ -135,6 +138,13 @@ in `LOOP.md` with matching platform runs and commits:
   enumerate accounts by timing. Fixed by running one scrypt against a dummy hash on
   the unknown-email path so both return in the same time, then re-verified through
   the `auth lifecycle` test.
+- **Availability advertised slots the engine would reject.** A checker-written backend
+  test found availability reporting hours beyond the 30-day booking horizon as `free`
+  while a hold on the same hour was rejected, an invariant break reachable by paging
+  "Later". It failed against the live URL (RED, run `c73ac75f`); the fix makes
+  availability skip beyond-horizon hours and return a distinct `422 BEYOND_HORIZON`
+  instead of the catch-all validation error; the same test then passed (GREEN, run
+  `b94420bb`, same `testId`). Red and green are both banked on the platform, one test.
 
 ## 🔗 Live and evidence
 
@@ -151,7 +161,7 @@ Sign in, open a studio, pick an open slot, and confirm to see the sealed referen
 Evidence, positive and negative:
 
 - Positive: the booking wizard completes end to end. The confirmation above shows a
-  real reference (`ATL-CDJ3L8`) minted by the live app.
+  real reference (`ATL-9SVKMX`) minted by the live app.
 - Negative (the system says no): the `anti-overlap invariant` test holds a slot, then
   a second account holding the same slot receives `409 SLOT_CONFLICT`; and the
   intentional-failure probe returned `failed`, proving the checker can fail loudly
