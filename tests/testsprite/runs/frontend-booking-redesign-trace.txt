@@ -1,0 +1,4 @@
+Bundle written to /home/drew/testsprite/.testsprite/runs/80bdef0c-cc81-46f1-b07b-5bb649a0d62e
+runId:      80bdef0c-cc81-46f1-b07b-5bb649a0d62e
+snapshotId: snap_558487408ed9756a
+files:      6

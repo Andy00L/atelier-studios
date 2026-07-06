@@ -1,8 +1,8 @@
 {
   "projectId": "310cfc78-d7b7-4bc9-949b-6866c980735a",
   "type": "frontend",
-  "name": "Booking a studio reaches a sealed confirmation with a reference",
-  "description": "A signed-in member opens a studio, holds an available slot, confirms it, and sees a booking confirmation showing a reference code that starts with ATL-.",
+  "name": "Booking a studio reaches the confirmation pass with a reference",
+  "description": "A signed-in member opens a studio, selects an open slot on the availability light board, continues to review to place a hold, confirms it, and sees a booking confirmation (the ivory pass) showing a reference code that starts with ATL-.",
   "priority": "p0",
   "planSteps": [
     { "type": "action", "description": "Navigate to the home page" },
@@ -12,8 +12,9 @@
     { "type": "action", "description": "Submit the sign in form" },
     { "type": "action", "description": "Open the studios gallery" },
     { "type": "action", "description": "Open the first studio in the gallery" },
-    { "type": "action", "description": "Select the first open time slot to place a hold" },
-    { "type": "action", "description": "Confirm the booking on the review panel" },
+    { "type": "action", "description": "On the availability light board, click the first open time slot to select it" },
+    { "type": "action", "description": "Click the 'Continue to review' button to place the hold" },
+    { "type": "action", "description": "Click the 'Confirm booking' button on the review panel" },
     { "type": "assertion", "description": "Verify the text 'Booking confirmed' and a reference code starting with 'ATL-' are both visible" }
   ]
 }

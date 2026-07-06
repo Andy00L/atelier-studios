@@ -1,0 +1,18 @@
+{
+  "testId": "8ca93867-88ca-4b70-a84a-b17036ae7347",
+  "status": "blocked",
+  "startedAt": "2026-07-06T06:25:36.834Z",
+  "finishedAt": "2026-07-06T06:32:49.800Z",
+  "videoUrl": "https://testsprite-videos.s3.us-east-1.amazonaws.com/e428b4a8-60f1-701f-4eb7-443f4980caf5/1783319569564457//tmp/0774bcd1-b750-45d8-997f-fdbc8943aeb4/result.webm",
+  "failureAnalysisUrl": null,
+  "snapshotId": "snap_558487408ed9756a",
+  "runIdIfAvailable": "80bdef0c-cc81-46f1-b07b-5bb649a0d62e",
+  "codeVersion": "v1",
+  "targetUrl": "https://atelier-studios-opal.vercel.app",
+  "targetUrlSource": "run",
+  "failedStepIndex": 12,
+  "failureKind": null,
+  "verdict": "blocked",
+  "executionStatus": "completed",
+  "summary": "Blocked before a verdict could be produced: TEST BLOCKED: PASS: All user-requested steps were completed. Observations from the final page state (visible on the confirmation panel and screenshot):\n- The page shows the heading 'Booking confirmed'.\n- The booking details show Aurora Photo Studio · Mon, Jul 6 · 15:00-16:00 UTC.\n- The reference code is visible as 'ATL-DFLMWD' (starts with 'ATL-').\n- A beige/ivory confirmation card (the booking pass) is visible on the right.\nAll requested actions (nav…"
+}

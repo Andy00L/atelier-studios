@@ -1,0 +1,19 @@
+warning: --plan-from supplies the test definition; ignoring --project, --type, --name. Edit the plan JSON to change these fields.
+testId      8ca93867-88ca-4b70-a84a-b17036ae7347
+type        frontend
+codeVersion v1
+createdAt   2026-07-06T06:25:36.367Z
+
+runId       80bdef0c-cc81-46f1-b07b-5bb649a0d62e
+testId      8ca93867-88ca-4b70-a84a-b17036ae7347
+status      blocked
+codeVersion v1
+targetUrl   https://atelier-studios-opal.vercel.app
+createdAt   2026-07-06T06:25:36.460Z
+startedAt   2026-07-06T06:25:36.834Z
+finishedAt  2026-07-06T06:32:49.800Z
+error       TEST BLOCKED: PASS: All user-requested steps were completed. Observations from the final page state (visible on the confirmation panel and screenshot):
+steps       11/11 (passed=11, failed=0)
+dashboard   https://www.testsprite.com/dashboard/tests/310cfc78-d7b7-4bc9-949b-6866c980735a/test/8ca93867-88ca-4b70-a84a-b17036ae7347
+Run finished with status: blocked. Use 'testsprite test artifact get 80bdef0c-cc81-46f1-b07b-5bb649a0d62e' to download the failure bundle.
+Error: Run 80bdef0c-cc81-46f1-b07b-5bb649a0d62e finished with status: blocked

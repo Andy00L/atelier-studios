@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "cli-v1",
+  "snapshotId": "snap_558487408ed9756a",
+  "testId": "8ca93867-88ca-4b70-a84a-b17036ae7347",
+  "projectId": "310cfc78-d7b7-4bc9-949b-6866c980735a",
+  "codeVersion": "v1",
+  "runIdIfAvailable": "80bdef0c-cc81-46f1-b07b-5bb649a0d62e",
+  "targetUrl": "https://atelier-studios-opal.vercel.app",
+  "failedStepIndex": 12,
+  "failureKind": null,
+  "capturedAt": "2026-07-06T06:32:49.800Z",
+  "fetchedAt": "2026-07-06T06:33:42.552Z"
+}
