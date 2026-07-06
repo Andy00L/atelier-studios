@@ -1,0 +1,16 @@
+{
+  "projectId": "310cfc78-d7b7-4bc9-949b-6866c980735a",
+  "type": "frontend",
+  "name": "An admin reaches the console with studios and the blackout form",
+  "description": "Signing in as the administrator and opening the admin route shows the operations console: the studios overview and the create-a-blackout form.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the home page" },
+    { "type": "action", "description": "Open the sign in page from the header" },
+    { "type": "action", "description": "Enter the email admin@atelier.test into the email field" },
+    { "type": "action", "description": "Enter the password AdminPass#2026 into the password field" },
+    { "type": "action", "description": "Submit the sign in form" },
+    { "type": "action", "description": "Open the admin console (the Admin link in the header, or navigate to /admin)" },
+    { "type": "assertion", "description": "Verify the admin console is shown: the heading 'Admin console', a Studios list with studio names, and a 'Create a blackout' form with a Create blackout button are all visible" }
+  ]
+}

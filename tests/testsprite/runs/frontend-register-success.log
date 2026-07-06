@@ -1,0 +1,15 @@
+testId      7a4a2be4-c6ba-4c38-9536-b5f976617661
+type        frontend
+codeVersion v1
+createdAt   2026-07-06T07:08:00.176Z
+
+runId       06a20c89-3f87-423f-83e3-0e6d841297c1
+testId      7a4a2be4-c6ba-4c38-9536-b5f976617661
+status      passed
+codeVersion v1
+targetUrl   https://atelier-studios-opal.vercel.app
+createdAt   2026-07-06T07:08:00.284Z
+startedAt   2026-07-06T07:08:00.570Z
+finishedAt  2026-07-06T07:09:47.910Z
+steps       8/8 (passed=8, failed=0)
+dashboard   https://www.testsprite.com/dashboard/tests/310cfc78-d7b7-4bc9-949b-6866c980735a/test/7a4a2be4-c6ba-4c38-9536-b5f976617661

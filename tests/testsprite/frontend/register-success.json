@@ -1,0 +1,15 @@
+{
+  "projectId": "310cfc78-d7b7-4bc9-949b-6866c980735a",
+  "type": "frontend",
+  "name": "Creating a new account signs the member in and reaches the dashboard",
+  "description": "A visitor opens the create-account page, registers with a fresh unique email, and is signed in and taken to the dashboard.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the create account page at /register" },
+    { "type": "action", "description": "Enter the name Test Member into the name field" },
+    { "type": "action", "description": "Enter a unique new email address into the email field, for example newmember.<random6>@atelier.test where <random6> is six random lowercase letters or digits you choose so the email has not been registered before" },
+    { "type": "action", "description": "Enter the password NewMemberPass#2026 into the password field" },
+    { "type": "action", "description": "Submit the create account form" },
+    { "type": "assertion", "description": "Verify the member is signed in and on the dashboard: the heading 'Dashboard' is visible and the header shows a Sign out control" }
+  ]
+}
