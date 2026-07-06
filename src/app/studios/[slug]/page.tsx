@@ -33,7 +33,7 @@ export default async function StudioPage({ params }: PageProps) {
     <div className="mx-auto max-w-6xl px-6 py-12 pb-28">
       <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[minmax(0,1fr)_30rem]">
         <section className="min-w-0">
-          <StudioArtwork slug={studio.slug} name={studio.name} variant="detail" />
+          <StudioArtwork slug={studio.slug} name={studio.name} variant="detail" photoUrl={studio.photoUrl} />
 
           <p className="mt-[26px] max-w-[34rem] text-[1.0625rem] leading-[1.55] text-muted text-pretty">
             {studio.description}

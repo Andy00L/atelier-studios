@@ -111,10 +111,12 @@ export function StudioArtwork({
   slug,
   name,
   variant,
+  photoUrl,
 }: {
   slug: string;
   name: string;
   variant: Variant;
+  photoUrl?: string;
 }) {
   const kind = studioKind(slug);
   const isDetail = variant === "detail";
@@ -141,6 +143,18 @@ export function StudioArtwork({
         }}
       />
       <Glyph kind={kind} variant={variant} />
+      {photoUrl ? (
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage: `url(${photoUrl})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+      ) : null}
       <div
         aria-hidden="true"
         style={{
@@ -159,8 +173,10 @@ export function StudioArtwork({
           left: 0,
           right: 0,
           bottom: 0,
-          height: "62%",
-          background: "linear-gradient(to top, rgba(0,0,0,.5), transparent)",
+          height: photoUrl ? "78%" : "62%",
+          background: photoUrl
+            ? "linear-gradient(to top, rgba(0,0,0,.82), rgba(0,0,0,.34) 42%, transparent 74%)"
+            : "linear-gradient(to top, rgba(0,0,0,.5), transparent)",
           pointerEvents: "none",
         }}
       />

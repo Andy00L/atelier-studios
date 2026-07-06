@@ -37,7 +37,7 @@ export function StudioCard({ studio, index = 0 }: { studio: Studio; index?: numb
       style={{ animation: "atl-cardIn .5s var(--ease-enter) both", animationDelay: `${index * 50}ms` }}
     >
       <div className="flex-none">
-        <StudioArtwork slug={studio.slug} name={studio.name} variant="card" />
+        <StudioArtwork slug={studio.slug} name={studio.name} variant="card" photoUrl={studio.photoUrl} />
       </div>
       <div className="flex flex-1 flex-col p-5">
         <p className="text-[0.9375rem] leading-relaxed text-muted">{studio.description}</p>
