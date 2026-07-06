@@ -1,0 +1,18 @@
+{
+  "projectId": "310cfc78-d7b7-4bc9-949b-6866c980735a",
+  "type": "frontend",
+  "name": "Joining the waitlist on a full slot shows a position",
+  "description": "A signed-in member opens a studio and clicks a time slot that is already booked (marked with a waitlist affordance) on the availability light board; the panel then shows that the member is on the waitlist with a numeric position.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the home page" },
+    { "type": "action", "description": "Open the sign in page from the header" },
+    { "type": "action", "description": "Enter the email member@atelier.test into the email field" },
+    { "type": "action", "description": "Enter the password MemberPass#2026 into the password field" },
+    { "type": "action", "description": "Submit the sign in form" },
+    { "type": "action", "description": "Open the studios gallery" },
+    { "type": "action", "description": "Open the first studio in the gallery" },
+    { "type": "action", "description": "On the availability light board, click a time slot that is already booked and shows a waitlist label" },
+    { "type": "assertion", "description": "Verify the panel shows the text 'You are on the waitlist' and a numeric position value" }
+  ]
+}

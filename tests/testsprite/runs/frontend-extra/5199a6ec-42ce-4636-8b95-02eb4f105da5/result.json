@@ -1,0 +1,18 @@
+{
+  "testId": "63e93ebc-6135-4034-b884-80f941136860",
+  "status": "blocked",
+  "startedAt": "2026-07-06T06:44:09.909Z",
+  "finishedAt": "2026-07-06T06:46:26.845Z",
+  "videoUrl": "https://testsprite-videos.s3.us-east-1.amazonaws.com/e428b4a8-60f1-701f-4eb7-443f4980caf5/1783320386390554//tmp/63734745-cea1-4b46-a28f-6161d576f019/result.webm",
+  "failureAnalysisUrl": null,
+  "snapshotId": "snap_4cec4e486d257cd7",
+  "runIdIfAvailable": "5199a6ec-42ce-4636-8b95-02eb4f105da5",
+  "codeVersion": "v1",
+  "targetUrl": "https://atelier-studios-opal.vercel.app",
+  "targetUrlSource": "run",
+  "failedStepIndex": 6,
+  "failureKind": null,
+  "verdict": "blocked",
+  "executionStatus": "completed",
+  "summary": "Blocked before a verdict could be produced: TEST BLOCKED: Result: The sign-in attempt with email 'member@atelier.test' and incorrect password 'wrong-password-123' produced an inline error on the login page. Observations from the page and screenshot:\n- The inline error text 'Invalid email or password.' is visible under the password field.\n- The sign-in form remains visible on /login (no navigation to a logged-in view), indicating the user was not signed in.\nThese observations directly satisfy th…"
+}

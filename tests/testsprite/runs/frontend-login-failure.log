@@ -1,0 +1,19 @@
+[advisory] A test named "Signing in with a wrong password shows an error" already exists in this project (testId: 24f81980-2d53-4876-b472-9561d8cf45aa). Use `testsprite test update 24f81980-2d53-4876-b472-9561d8cf45aa` to modify it, or proceed to create a duplicate.
+testId      63e93ebc-6135-4034-b884-80f941136860
+type        frontend
+codeVersion v1
+createdAt   2026-07-06T06:44:09.582Z
+
+runId       5199a6ec-42ce-4636-8b95-02eb4f105da5
+testId      63e93ebc-6135-4034-b884-80f941136860
+status      blocked
+codeVersion v1
+targetUrl   https://atelier-studios-opal.vercel.app
+createdAt   2026-07-06T06:44:09.676Z
+startedAt   2026-07-06T06:44:09.909Z
+finishedAt  2026-07-06T06:46:26.845Z
+error       TEST BLOCKED: Result: The sign-in attempt with email 'member@atelier.test' and incorrect password 'wrong-password-123' produced an inline error on the login page. Observations from the page and screen…
+steps       5/5 (passed=5, failed=0)
+dashboard   https://www.testsprite.com/dashboard/tests/310cfc78-d7b7-4bc9-949b-6866c980735a/test/63e93ebc-6135-4034-b884-80f941136860
+Run finished with status: blocked. Use 'testsprite test artifact get 5199a6ec-42ce-4636-8b95-02eb4f105da5' to download the failure bundle.
+Error: Run 5199a6ec-42ce-4636-8b95-02eb4f105da5 finished with status: blocked

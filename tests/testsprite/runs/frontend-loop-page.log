@@ -1,0 +1,19 @@
+[advisory] A test named "The loop page shows the numbered build journal" already exists in this project (testId: acd6f292-5a83-40fa-a49b-77bac09c2d8a). Use `testsprite test update acd6f292-5a83-40fa-a49b-77bac09c2d8a` to modify it, or proceed to create a duplicate.
+testId      2e611d3e-f9e9-45e7-8e57-1ba68f390a9b
+type        frontend
+codeVersion v1
+createdAt   2026-07-06T06:44:09.546Z
+
+runId       c1a60f3a-a237-4217-93c0-7385b647d68a
+testId      2e611d3e-f9e9-45e7-8e57-1ba68f390a9b
+status      blocked
+codeVersion v1
+targetUrl   https://atelier-studios-opal.vercel.app
+createdAt   2026-07-06T06:44:09.632Z
+startedAt   2026-07-06T06:44:09.908Z
+finishedAt  2026-07-06T06:45:06.446Z
+error       TEST BLOCKED: Task: Verify /loop page renders the agent-written build journal as a numbered list of loop iterations.
+steps       2/2 (passed=2, failed=0)
+dashboard   https://www.testsprite.com/dashboard/tests/310cfc78-d7b7-4bc9-949b-6866c980735a/test/2e611d3e-f9e9-45e7-8e57-1ba68f390a9b
+Run finished with status: blocked. Use 'testsprite test artifact get c1a60f3a-a237-4217-93c0-7385b647d68a' to download the failure bundle.
+Error: Run c1a60f3a-a237-4217-93c0-7385b647d68a finished with status: blocked

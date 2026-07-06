@@ -1,0 +1,16 @@
+[advisory] A test named "The home gallery lists the studios with rates" already exists in this project (testId: c9a41561-2c1a-40a7-9e35-71fc280adc6b). Use `testsprite test update c9a41561-2c1a-40a7-9e35-71fc280adc6b` to modify it, or proceed to create a duplicate.
+testId      9422eedc-9b9c-4507-b0ce-acd37fe476da
+type        frontend
+codeVersion v1
+createdAt   2026-07-06T06:44:09.548Z
+
+runId       0e1e2e90-c8b6-4781-868f-0c9a194f0cfc
+testId      9422eedc-9b9c-4507-b0ce-acd37fe476da
+status      passed
+codeVersion v1
+targetUrl   https://atelier-studios-opal.vercel.app
+createdAt   2026-07-06T06:44:09.635Z
+startedAt   2026-07-06T06:44:09.866Z
+finishedAt  2026-07-06T06:45:02.949Z
+steps       4/4 (passed=4, failed=0)
+dashboard   https://www.testsprite.com/dashboard/tests/310cfc78-d7b7-4bc9-949b-6866c980735a/test/9422eedc-9b9c-4507-b0ce-acd37fe476da

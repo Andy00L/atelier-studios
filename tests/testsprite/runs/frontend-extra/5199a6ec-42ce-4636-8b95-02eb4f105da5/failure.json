@@ -1,0 +1,5 @@
+{
+  "rootCauseHypothesis": "TEST BLOCKED: Result: The sign-in attempt with email 'member@atelier.test' and incorrect password 'wrong-password-123' produced an inline error on the login page. Observations from the page and screenshot:\n- The inline error text 'Invalid email or password.' is visible under the password field.\n- The sign-in form remains visible on /login (no navigation to a logged-in view), indicating the user was not signed in.\nThese observations directly satisfy the test requirement that submitting a known email with an incorrect password shows an inline error and does not sign the user in.",
+  "recommendedFixTarget": null,
+  "evidence": []
+}
