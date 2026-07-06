@@ -39,6 +39,8 @@ yarn-error.log*
 
 # design-loop working files (Claude Design prompt pack, palette card, renders)
 /docs/design/
+# raw Claude Design exports (zips + PNGs, kept locally only)
+/docs/.desgin/
 
 # convex local anonymous deployment state (offline dev only)
 /.convex/
